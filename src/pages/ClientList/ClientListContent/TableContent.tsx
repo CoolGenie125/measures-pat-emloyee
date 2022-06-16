@@ -1,3 +1,5 @@
+/** @format */
+
 import { useStyles } from "./TableContentStyles";
 import { TableRow, TableCell } from "@material-ui/core";
 import clsx from "clsx";
@@ -37,6 +39,9 @@ const TableContent = ({
         ?.slice(pageNumber * perPageNumber, (pageNumber + 1) * perPageNumber)
         .map((row: any, key: any) => (
           <TableRow key={key}>
+            <TableCell className={clsx(classes.tableCell)}>
+              {pageNumber * perPageNumber + key + 1}
+            </TableCell>
             <TableCell className={clsx(classes.tableCell)}>
               {row.name}
             </TableCell>

@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     tableContainer: {
       "&.MuiTableContainer-root": {
-        overflow: "auto hidden",
         border: "none",
         padding: "0px",
         marginBottom: "20px",

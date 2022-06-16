@@ -7,6 +7,7 @@ import TableContent from "./ClientListContent/TableContent";
 import { ClientListStyles } from "./ClientListStyles";
 
 export const tableHeader = [
+  "No",
   "Name",
   "Company Name",
   "Company Email",

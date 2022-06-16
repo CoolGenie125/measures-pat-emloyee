@@ -1,0 +1,5 @@
+Currently, in employee side i have built client list table and account page.
+This also has responsive function and list table component has pagination function.
+This is ready to receive data from backend side.
+I didn't build CMS function yet. 
+Regards
