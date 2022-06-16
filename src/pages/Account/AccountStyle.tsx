@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 export const AccountStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: "#ebeff2",
+      backgroundColor: "#21263F",
       padding: "96px 48px 144px 48px",
       boxSizing: "border-box",
       [theme.breakpoints.down(1140)]:{
@@ -23,7 +23,7 @@ export const AccountStyles = makeStyles((theme: Theme) =>
       },
     },
     container: {
-      background: "#fff",
+      background: "#323A5F",
       borderRadius: "10px",
       boxShadow: "40px 50px 30px rgb(0 0 0 / 10%)",
       marginBottom: "96px",
@@ -72,10 +72,10 @@ export const AccountStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       width: "100%",
       height: "60px",
-      borderBottom: "1px solid #ebeff2",
+      borderBottom: "1px solid #323A5F",
     },
     formTitle: {
-      color: "#000",
+      color: "#fff",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "16px",
       fontWeight: 700,
@@ -93,7 +93,7 @@ export const AccountStyles = makeStyles((theme: Theme) =>
       },
     },
     formValue: {
-      color: "#000",
+      color: "#fff",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "16px",
       fontWeight: 700,

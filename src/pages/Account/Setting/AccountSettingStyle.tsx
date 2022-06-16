@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 export const AccountSettingStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: "#ebeff2",
+      backgroundColor: "#21263F",
       padding: "96px 48px 96px 48px",
       boxSizing: "border-box",
       [theme.breakpoints.down(840)]: {
@@ -23,7 +23,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       },
     },
     container: {
-      background: "#fff",
+      background: "#323A5F",
       borderRadius: "10px",
       boxShadow: "40px 50px 30px rgb(0 0 0 / 10%)",
       padding: "96px",
@@ -103,35 +103,9 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       lineHeight: 1.4,
       marginRight: "5px",
     },
-    formInput: {
-      width: "100%",
-      color: "#333333",
-      fontFamily: "Lato",
-      fontSize: "15px",
-      fontWeight: 400,
-      border: "1px solid #eeeeee",
-      borderRadius: "4px",
-      lineHeight: 1.4,
-      letterSpacing: "0.05em",
-      textAlign: "left",
-      padding: "14px 10px",
-      boxShadow: "none",
-      transitionDelay: "400ms",
-      transitionDuration: "1000ms",
-      boxSizing: "border-box",
-      "&::placeholder": {
-        fontFamily: "Lato",
-        fontSize: "15px",
-        fontWeight: 400,
-        lineHeight: 1.4,
-        letterSpacing: "0.05em",
-        color: "#E8E8E8",
-        opacity: 1 /* Firefox */,
-      },
-    },
     formTextarea: {
       width: "100% !important",
-      color: "#333333",
+      color: "#fff",
       fontFamily: "Lato",
       fontSize: "15px",
       fontWeight: 400,
@@ -153,8 +127,14 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
         fontWeight: 400,
         lineHeight: 1.4,
         letterSpacing: "0.05em",
-        color: "#E8E8E8",
+        color: "#ffffff70",
         opacity: 1 /* Firefox */,
+      },
+      "&:focus-visible":{
+        outline: "none",
+      },
+      "&:focus":{
+        outline: "none",
       },
     },
     formBtn: {
@@ -165,7 +145,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       display: "flex",
       alignItems: "center",
       width: "100%",
-      color: "#333333",
+      color: "#55727e",
       fontFamily: "ヒラギノ角ゴ W3 JIS2004",
       fontSize: "14px",
       lineHeight: 1.4,
@@ -186,7 +166,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
     },
     importLetter: {
-      color: "#555555",
+      color: "#ffffff70",
       fontFamily: "Lato",
       fontSize: "14px",
       fontWeight: 400,

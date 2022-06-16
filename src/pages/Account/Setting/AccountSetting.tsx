@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import ActionButton from "components/ActionButton/ActionButton";
+import ActionInput from "components/ActionInput/ActionInput";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AccountSettingStyles } from "./AccountSettingStyle";
@@ -43,22 +44,20 @@ export const AccountSetting = () => {
             <div className={classes.formTitle}>
               姓 <span className={classes.symbol}>*</span>
             </div>
-            <input
-              className={classes.formInput}
-              value={lastName}
-              placeholder='こちらのフォームより承っております'
-              onChange={(e) => setLastName(e.target.value)}
+            <ActionInput
+            value={lastName}
+            placeholder='こちらのフォームより承っております'
+            action={(e) => setLastName(e)}
             />
           </div>
           <div className={classes.accountSettingForm}>
             <div className={classes.formTitle}>
               名 <span className={classes.symbol}>*</span>
             </div>
-            <input
-              className={classes.formInput}
+            <ActionInput
               value={firstName}
               placeholder='こちらのフォームより承っております'
-              onChange={(e) => setFirstName(e.target.value)}
+              action={(e) => setFirstName(e)}
             />
           </div>
         </div>
@@ -66,45 +65,41 @@ export const AccountSetting = () => {
           <div className={classes.formTitle}>
             日中連絡がとれる電話番号 <span className={classes.symbol}>*</span>
           </div>
-          <input
-            className={classes.formInput}
+          <ActionInput
             value={phoneNumber}
             placeholder='0X0-1234-5678'
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
+            action={(e) => setPhoneNumber(e)}
+            />
         </div>
         <div className={classes.accountSettingForm}>
           <div className={classes.formTitle}>
             会社で使うメールアドレス <span className={classes.symbol}>*</span>
           </div>
-          <input
-            className={classes.formInput}
+          <ActionInput
             value={companyEmail}
             placeholder='example@shisaku-pad.co.jp'
-            onChange={(e) => setCompanyEmail(e.target.value)}
+            action={(e) => setCompanyEmail(e)}
           />
         </div>
         <div className={classes.accountSettingForm}>
           <div className={classes.formTitle}>
             個人で使うメールアドレス <span className={classes.symbol}>*</span>
           </div>
-          <input
-            className={classes.formInput}
+          <ActionInput
             value={perEmail}
             placeholder='example@gmail.com'
-            onChange={(e) => setPerEmail(e.target.value)}
+            action={(e) => setPerEmail(e)}
           />
         </div>
         <div className={classes.accountSettingForm}>
           <div className={classes.formTitle}>
             パスワード <span className={classes.symbol}>*</span>
           </div>
-          <input
-            className={classes.formInput}
+          <ActionInput
             type='password'
             value={passWord}
             placeholder='******'
-            onChange={(e) => setPassWord(e.target.value)}
+            action={(e) => setPassWord(e)}
           />
         </div>
         <div className={classes.accountSettingForm}>

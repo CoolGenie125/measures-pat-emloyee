@@ -1,6 +1,6 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
-export const ErrorRouteStyles = makeStyles((theme: Theme) =>
+export const ClientListStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: "#21263F",
@@ -23,27 +23,24 @@ export const ErrorRouteStyles = makeStyles((theme: Theme) =>
       },
     },
     container: {
-      background: "#fff",
+      background: "#323A5F",
       borderRadius: "10px",
       boxShadow: "40px 50px 30px rgb(0 0 0 / 10%)",
-      padding: "96px",
+      padding: "24px",
       textAlign: "center",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
       [theme.breakpoints.down(840)]: {
-        padding: "48px",
+        padding: "12px",
         transitionDelay: "300ms",
         transitionDuration: "1000ms",
       },
       [theme.breakpoints.down(440)]: {
-        padding: "24px",
+        padding: "12px",
         transitionDelay: "300ms",
         transitionDuration: "1000ms",
       },
     },
-    errorRouteTitle: {
+    clientListTitle: {
+      marginTop:"50px",
       color: "#55727e",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "40px",
@@ -65,8 +62,8 @@ export const ErrorRouteStyles = makeStyles((theme: Theme) =>
         transitionDuration: "1000ms",
       },
     },
-    errorRouteSmallTitle: {
-      color: "#000",
+    clientListSmallTitle: {
+      color: "#fff",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "16px",
       fontWeight: 600,
@@ -86,6 +83,12 @@ export const ErrorRouteStyles = makeStyles((theme: Theme) =>
         transitionDelay: "300ms",
         transitionDuration: "1000ms",
       },
+    },
+    tableRoot: {
+      marginTop: "50px",
+    },
+    backHomeBtn:{
+      margin: "50px auto 0 auto",
     },
   })
 );

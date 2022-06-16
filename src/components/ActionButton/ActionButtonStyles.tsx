@@ -45,7 +45,7 @@ export const ActionButtonStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       width: "fit-content",
       alignItems: "center",
-      background: "#ebeff2",
+      background: "#eeeeee",
       borderRadius: "10px",
       boxShadow: "20px 20px 30px rgb(0 0 0 / 20%)",
       transitionDelay: "0ms",
