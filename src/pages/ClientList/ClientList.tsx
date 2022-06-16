@@ -1,5 +1,3 @@
-/** @format */
-
 import ActionButton from "components/ActionButton/ActionButton";
 import ActionTable from "components/Table/ActionTable";
 import { clientListArray } from "config/constant";

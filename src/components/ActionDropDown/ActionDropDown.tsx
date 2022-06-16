@@ -1,7 +1,3 @@
-/** @format */
-
-import { RootRef } from "@material-ui/core";
-import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import { useStyles } from "./ActionDropDownStyles";
 

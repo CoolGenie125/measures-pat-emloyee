@@ -1,5 +1,3 @@
-/** @format */
-
 import { useStyles } from "./ConfirmModalStyle";
 import { useState, useEffect, useRef } from "react";
 import ActionButton from "components/ActionButton/ActionButton";
