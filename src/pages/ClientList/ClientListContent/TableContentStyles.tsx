@@ -1,3 +1,5 @@
+/** @format */
+
 import { Theme, makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme: Theme) => ({
@@ -25,6 +27,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
   actionIcon: {
     "& i": {
       cursor: "pointer",
+    },
+    "&:hover": {
+      opacity: 0.5,
     },
   },
   marginRight10: {

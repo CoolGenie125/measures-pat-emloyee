@@ -9,6 +9,7 @@ import { AccountSetting } from "pages/Account/Setting/AccountSetting";
 import { ThankYou } from "pages/ThankYou/ThankYou";
 import { ErrorRoute } from "pages/ErrorRoute/ErrorRoute";
 import { ClientList } from "pages/ClientList/ClientList";
+import { CMS } from "pages/CMS/CMS";
 
 export default function Layout() {
   const classes = LayoutStyles();
@@ -48,6 +49,7 @@ export default function Layout() {
           <Route path='/account' element={<Account />} />
           <Route path='/account/setting' element={<AccountSetting />} />
           <Route path="/clientlist" element={<ClientList/>}/>
+          <Route path="/cms" element={<CMS/>}/>
           <Route path='/404' element={<ErrorRoute />} />
           <Route path='/thankyou' element={<ThankYou />} />
         </Routes>
