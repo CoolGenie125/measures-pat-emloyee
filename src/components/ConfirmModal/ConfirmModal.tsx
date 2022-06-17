@@ -1,11 +1,21 @@
 import { useStyles } from "./ConfirmModalStyle";
 import { useState, useEffect, useRef } from "react";
 import ActionButton from "components/ActionButton/ActionButton";
-interface Props {
+
+interface ConfirmModalProps {
   show: boolean;
   onClose: () => void;
+  title: string;
+  description: string;
+  action: ()=> void;
 }
-export default function ConfirmModal({ show, onClose }: Props) {
+export default function ConfirmModal({
+  show,
+  onClose,
+  title,
+  description,
+  action,
+}: ConfirmModalProps) {
   const classes = useStyles();
 
   const [showStatus, setShowStatus] = useState(show);
@@ -44,24 +54,21 @@ export default function ConfirmModal({ show, onClose }: Props) {
         className={showStatus ? classes.loaderWrapper : classes.displayNone}
         ref={rootRef}>
         <div className={classes.modalRoot} ref={contentRef}>
-          <div className={classes.title}>Delete Item</div>
+          <div className={classes.title}>{title}</div>
           <div className={classes.mainContainer}>
-            <div className={classes.descContainer}>
-              Are you sure you want to delete this Item. This operation is not
-              reversible
-            </div>
+            <div className={classes.descContainer}>{description}</div>
           </div>
           <div className={classes.btnContainer}>
             <ActionButton
-              content='cancel'
+              content='キャンセル'
               className={classes.cancelBtn}
               action={onClose}
             />
             <ActionButton
-              content='confirm'
+              content='確認'
               type='dark'
               className={classes.confirmBtn}
-              action={() => {}}
+              action={action}
             />
           </div>
         </div>

@@ -1,6 +1,7 @@
 /** @format */
 
 import clsx from "clsx";
+import ConfirmModal from "components/ConfirmModal/ConfirmModal";
 import { useState } from "react";
 import { useStyles } from "./ActionTabStyles";
 
@@ -22,14 +23,24 @@ export default function ActionTab({
   addEvent,
 }: ActionTabProps) {
   const classes = useStyles();
-  const [addStatus, setAddStatus] = useState(false);
+  const [confirmStatus, setConfirmStatus] = useState(false);
+  const [addItemStatus, setAddItemStatus] = useState(false);
 
   const handleAdd = () => {
-    setAddStatus(true);
+    setConfirmStatus(true);
   };
   const handleEnter = (e: any) => {
-    setAddStatus(false);
+    setAddItemStatus(false);
     if (addEvent) addEvent(e);
+  };
+
+  const handleConfirmModalClose = () => {
+    setConfirmStatus(false);
+  };
+
+  const handleConfirmAction = () => {
+    setAddItemStatus(true);
+    setConfirmStatus(false);
   };
 
   return (
@@ -46,7 +57,7 @@ export default function ActionTab({
       })}
       {add ? (
         <div className={classes.tabAdd}>
-          {addStatus ? (
+          {addItemStatus ? (
             <input
               className={classes.tabInput}
               onKeyPress={(e) => e.key === "Enter" && handleEnter(e)}
@@ -58,6 +69,13 @@ export default function ActionTab({
       ) : (
         <></>
       )}
+      <ConfirmModal
+        title='カテゴリを追加'
+        description='カテゴリを追加しますか？'
+        show={confirmStatus}
+        onClose={handleConfirmModalClose}
+        action={handleConfirmAction}
+      />
     </div>
   );
 }

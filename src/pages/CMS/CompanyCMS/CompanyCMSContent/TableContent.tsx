@@ -1,3 +1,5 @@
+/** @format */
+
 import { useStyles } from "./TableContentStyles";
 import { TableRow, TableCell } from "@material-ui/core";
 import clsx from "clsx";
@@ -41,25 +43,19 @@ const TableContent = ({
               {pageNumber * perPageNumber + key + 1}
             </TableCell>
             <TableCell className={clsx(classes.tableCell)}>
-              {row.name}
+              {row.category}
             </TableCell>
             <TableCell className={clsx(classes.tableCell)}>
-              {row.company}
+              {row.price}
             </TableCell>
             <TableCell className={clsx(classes.tableCell)}>
-              {row.companyemail}
-            </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
-              {row.personalemail}
-            </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
-              {row.phone}
+              {row.description}
             </TableCell>
             <TableCell className={clsx(classes.tableCell, classes.action)}>
               <ActionDropDown>
                 <div
                   className={clsx(classes.actionIcon, classes.marginRight10)}>
-                  <i className='fas fa-user-edit'></i>
+                  <i className='far fa-edit'></i>
                 </div>
               </ActionDropDown>
               <div

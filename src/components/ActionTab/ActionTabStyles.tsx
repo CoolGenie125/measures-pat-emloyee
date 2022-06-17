@@ -8,7 +8,6 @@ export const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "flex-start",
       alignItems: "center",
-      borderBottom: "1px solid #373F66",
       width: "100%",
     },
     item: {
@@ -22,8 +21,9 @@ export const useStyles = makeStyles((theme: Theme) =>
       color: "#FFFFFF",
       cursor: "pointer",
       borderTop: "2px solid transparent",
+      opacity: 0.5,
       "&:hover": {
-        opacity: 0.5,
+        opacity: 1,
       },
     },
     activeItem: {
@@ -35,15 +35,15 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontSize: "16px",
       lineHeight: "19px",
       color: "#FFFFFF",
-      borderTop: "2px solid #7F64E2",
+      opacity: 1,
+      borderTop: "2px solid #FF7C4C",
     },
     tabAdd: {
       margin: "0 10px",
       "& i": {
-        fontSize: "19px",
-        lineHeight: "19px",
         cursor: "pointer",
         color: "#fff",
+        padding: "18px 0",
         "&:hover": {
           opacity: 0.5,
         },
@@ -59,7 +59,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       lineHeight: "19px",
       color: "#FFFFFF",
       padding: "10px 10px",
-      border: "1px solid #373F66",
+      border: "1px solid #a5aac3",
       borderRadius: "4px",
       boxShadow: "none",
       transitionDelay: "400ms",

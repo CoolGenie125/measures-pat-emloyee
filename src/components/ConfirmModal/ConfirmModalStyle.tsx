@@ -69,7 +69,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginRight: "15px",
   },
   confirmBtn: {
-    background: "#FFB03A",
+    background: "#ff3a68",
     marginBottom: "20px",
     width: "100%",
     [theme.breakpoints.down(570)]: {

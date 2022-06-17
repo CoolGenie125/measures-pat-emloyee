@@ -3,6 +3,8 @@
 import ActionTab from "components/ActionTab/ActionTab";
 import { useState } from "react";
 import { useStyles } from "./CMSStyles";
+import { CompanyCMS } from "./CompanyCMS/CompanyCMS";
+import { PersonalCMS } from "./PersonalCMS/PersonalCMS";
 
 export const CMS = () => {
   const classes = useStyles();
@@ -14,31 +16,6 @@ export const CMS = () => {
     setSelectTopTab(e);
   };
 
-  //----------------middle-tab----------------------
-  const tabdata: any = ["builder", "marketplace", "Dex"];
-  const [allTabData, setAllTabData] = useState<any>(tabdata);
-  const [selectTab, setSelectTab] = useState<string>(tabdata[0]);
-
-  const handleTab = (e: string) => {
-    setSelectTab(e);
-  };
-
-  const handleNewItem = (e: any) => {
-    let newInputItem: string[] = [];
-    if (e.target.value !== "") {
-      if (allTabData === undefined || allTabData?.length === 0) {
-        newInputItem.push(e.target.value);
-      } else {
-        if (allTabData.includes(e.target.value)) {
-          newInputItem = newInputItem.concat(allTabData);
-        } else {
-          newInputItem = newInputItem.concat(allTabData, e.target.value);
-        }
-      }
-      setAllTabData(newInputItem);
-    }
-  };
-
   return (
     <div className={classes.root}>
       <ActionTab
@@ -48,14 +25,7 @@ export const CMS = () => {
         select={selectTopTab}
       />
       <div className={classes.container}>
-        <ActionTab
-          data={allTabData}
-          className={classes.middleTab}
-          action={(e) => handleTab(e)}
-          select={selectTab}
-          addEvent={handleNewItem}
-          add
-        />
+        {selectTopTab === topHeader[0] ? <CompanyCMS /> : <PersonalCMS />}
       </div>
     </div>
   );

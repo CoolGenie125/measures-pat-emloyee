@@ -124,3 +124,61 @@ export const clientListArray:any =[
   },
 
 ];
+
+export const cmsListArray:any = [
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+  {
+    category: "Web production",
+    price: "150,000 yen",
+    description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
+  },
+];
