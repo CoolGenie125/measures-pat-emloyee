@@ -55,6 +55,7 @@ export const CompanyCMS = () => {
 
   return (
     <div className={classes.root}>
+      <div className={classes.title}>会社向けサービス</div>
       <ActionTab
         className={classes.actionTab}
         data={allTabData}

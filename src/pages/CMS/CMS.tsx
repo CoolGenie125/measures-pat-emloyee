@@ -10,7 +10,7 @@ export const CMS = () => {
   const classes = useStyles();
 
   //---------------top-tab--------------------------
-  const topHeader: any = ["個人向けサービス", "会社向けサービス"];
+  const topHeader: any = ["会社向けサービス", "個人向けサービス"];
   const [selectTopTab, setSelectTopTab] = useState<string>(topHeader[0]);
   const handleTopTab = (e: string) => {
     setSelectTopTab(e);
