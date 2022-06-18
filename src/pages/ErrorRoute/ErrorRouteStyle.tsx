@@ -23,7 +23,7 @@ export const ErrorRouteStyles = makeStyles((theme: Theme) =>
       },
     },
     container: {
-      background: "#fff",
+      background: "#323A5F",
       borderRadius: "10px",
       boxShadow: "40px 50px 30px rgb(0 0 0 / 10%)",
       padding: "96px",
@@ -66,7 +66,7 @@ export const ErrorRouteStyles = makeStyles((theme: Theme) =>
       },
     },
     errorRouteSmallTitle: {
-      color: "#000",
+      color: "#fff",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "16px",
       fontWeight: 600,

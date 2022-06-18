@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 export const ThankYouStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: "#080821",
+      backgroundColor: "#21263F",
       padding: "96px",
       boxSizing: "border-box",
       [theme.breakpoints.down(840)]: {
@@ -23,7 +23,7 @@ export const ThankYouStyles = makeStyles((theme: Theme) =>
       },
     },
     container: {
-      background: "#23233D",
+      background: "#323A5F",
       borderRadius: "10px",
       boxShadow: "40px 50px 30px rgb(0 0 0 / 10%)",
       padding: "96px",
