@@ -1,5 +1,3 @@
-/** @format */
-
 import clsx from "clsx";
 import ConfirmModal from "components/ConfirmModal/ConfirmModal";
 import { useState } from "react";

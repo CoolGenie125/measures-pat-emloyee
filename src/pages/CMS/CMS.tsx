@@ -1,5 +1,3 @@
-/** @format */
-
 import ActionTab from "components/ActionTab/ActionTab";
 import { useState } from "react";
 import { useStyles } from "./CMSStyles";

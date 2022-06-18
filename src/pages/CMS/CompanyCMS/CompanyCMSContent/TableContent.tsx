@@ -1,5 +1,3 @@
-/** @format */
-
 import { useStyles } from "./TableContentStyles";
 import { TableRow, TableCell } from "@material-ui/core";
 import clsx from "clsx";

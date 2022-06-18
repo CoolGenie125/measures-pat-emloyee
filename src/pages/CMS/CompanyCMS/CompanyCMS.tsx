@@ -1,5 +1,3 @@
-/** @format */
-
 import ActionButton from "components/ActionButton/ActionButton";
 import ActionTab from "components/ActionTab/ActionTab";
 import ActionTable from "components/Table/ActionTable";
