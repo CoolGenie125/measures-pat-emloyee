@@ -5,10 +5,10 @@ export const useStyles = makeStyles((theme: Theme) =>
     root: {
       width: "100%",
     },
-    actionTab:{
+    actionTab: {
       marginBottom: "50px",
     },
-    title:{
+    title: {
       color: "#fff",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "40px",
@@ -30,6 +30,30 @@ export const useStyles = makeStyles((theme: Theme) =>
         transitionDuration: "1000ms",
       },
     },
-    tableRoot:{},
+    tableRoot: {},
+    tableTool: {
+      display: "flex",
+      justifyContent: "right",
+      alignItems: "center",
+    },
+    addBtn: {
+      cursor: "pointer",
+      width: "fit-content",
+      color: "#fff",
+      fontFamily: "ヒラギノ角ゴ W6 JIS2004",
+      fontSize: "18px",
+      fontWeight: 600,
+      height: "auto",
+      lineHeight: 1.4,
+      "& i": {
+        marginLeft: "10px",
+        fontSize: "18px",
+        lineHeight: "18px",
+        color: "#fff",
+      },
+      "&:hover": {
+        opacity: 0.5,
+      },
+    },
   })
 );

@@ -43,6 +43,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   mainContainer: {
     padding: "0px 50px",
+    [theme.breakpoints.down(540)]: {
+      padding: 0,
+    },
   },
   descContainer: {
     color: "#96A1DB",
@@ -55,6 +58,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: "30px",
   },
   btnContainer: {
+    marginTop: "50px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -75,5 +79,69 @@ export const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down(570)]: {
       marginLeft: "0px",
     },
+  },
+  form: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "10px",
+  },
+  formTitle: {
+    minWidth: "100px",
+    marginRight: "5px",
+    color: "#96A1DB",
+    fontFamily: "Lato",
+    fontWeight: 400,
+    fontSize: "18px",
+    lineHeight: "29px",
+    textAlign: "center",
+  },
+  formInput: {
+    color: "#96A1DB",
+    fontFamily: "Lato",
+    fontWeight: 400,
+    fontSize: "18px",
+    lineHeight: "29px",
+    textAlign: "center",
+  },
+  imgLoaderRoot: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "50px",
+  },
+  imgLoader: {
+    width: "50%",
+    border: "1px dashed #dddddd",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    "&::before": {
+      content: `""`,
+      float: "left",
+      paddingBottom: "90%",
+      [theme.breakpoints.down(540)]: {
+        paddingBottom: "90%",
+        transitionDelay: "300ms",
+        transitionDuration: "1000ms",
+      },
+    },
+    [theme.breakpoints.down(540)]: {
+      width: "100%",
+      transitionDelay: "300ms",
+      transitionDuration: "1000ms",
+    },
+  },
+  importLetter: {
+    color: "#ffffff70",
+    fontFamily: "Lato",
+    fontSize: "14px",
+    fontWeight: 400,
+    margin: "10px",
+  },
+  importImg: {
+    width: "100%",
+    height: "100%",
   },
 }));

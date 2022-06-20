@@ -23,8 +23,6 @@ export default function ConfirmModal({
   const rootRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  console.log("content ref : ", contentRef);
-
   useEffect(() => {
     if (show) {
       document.body.style.overflow = "hidden";

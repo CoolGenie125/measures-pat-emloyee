@@ -145,69 +145,6 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
       width: "97px",
       height: "19px",
     },
-    sidebarRight: {
-      transition: ".3s cubic-bezier(.4,.4,0,1)",
-      zIndex: 2,
-      position: "fixed",
-      left: 300,
-      top: 0,
-      width: "300px",
-      height: "100%",
-      background: "#364750",
-      boxShadow: "0px 6px 15px 0px rgb(0 0 0 / 20%)",
-      [theme.breakpoints.down(840)]: {
-        left: "50%",
-        width: "50%",
-      },
-    },
-    rightHeader: {
-      height: "96px",
-      background: "#475b69",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "right",
-      padding: "0 16px",
-      cursor: "pointer",
-    },
-    closeIcon: {
-      "& i": {
-        fontSize: "30px",
-        lineHeight: "30px",
-        color: "#fff",
-      },
-    },
-    rightContont: {
-      padding: "0 12px",
-    },
-    rightItem: {
-      height: "72px",
-      display: "flex",
-      alignItems: "center",
-      padding: "0 12px",
-      borderBottom: "1px solid #475b69",
-      transition: ".3s cubic-bezier(.4,.4,0,1)",
-      cursor: "pointer",
-      "&:hover": {
-        opacity: 0.5,
-      },
-    },
-    rightArrow: {
-      "& i": {
-        color: "#9ab0bc",
-        fontSize: "20px",
-        margin: "0px 12px 0px 0px",
-      },
-    },
-    rightItemContent: {
-      color: "#ffffff",
-      fontFamily: "ヒラギノ角ゴ W6 JIS2004",
-      fontSize: "16px",
-      fontWeight: 600,
-      height: "auto",
-      letterSpacing: "0.15em",
-      lineHeight: "1.4",
-      padding: "0 12px",
-    },
     closePart: {
       display: "none",
       [theme.breakpoints.down(840)]: {
@@ -228,30 +165,6 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
       cursor: "pointer",
       "& i": {
         color: "#fff",
-        fontSize: "35px",
-        lineHeight: "35px",
-      },
-    },
-    closeRightPart: {
-      position: "fixed",
-      top: 0,
-      left: 600,
-      width: "calc(100% - 600px)",
-      height: "100%",
-      display: "flex",
-      justifyContent: "right",
-      padding: "30px",
-      zIndex: 2,
-      backgroundColor: "rgb(0, 0, 0, 0.7)",
-      boxSizing: "border-box",
-      [theme.breakpoints.down(840)]: {
-        display: "none",
-      },
-    },
-    closeRightRootIcon: {
-      cursor: "pointer",
-      "& i": {
-        color: "#000",
         fontSize: "35px",
         lineHeight: "35px",
       },

@@ -1,10 +1,10 @@
-import ActionButton from "components/ActionButton/ActionButton";
-import ActionTab from "components/ActionTab/ActionTab";
 import ActionTable from "components/Table/ActionTable";
 import { cmsListArray } from "config/constant";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TableContent from "./CompanyCMSContent/TableContent";
+import AddServiceModal from "../Components/AddServiceModal/AddServiceModal";
+import CmsTab from "../Components/CmsTab/CmsTab";
+import TableContent from "../Components/CMSTableContent/TableContent";
 import { useStyles } from "./CompanyCMSStyle";
 
 export const CompanyCMS = () => {
@@ -12,6 +12,13 @@ export const CompanyCMS = () => {
   const navigate = useNavigate();
 
   const tableHeader = ["No", "Category", "Price", "Description", "Action"];
+
+  //--------------add item modal function---------------------------
+  const [addStatus, setAddStatus] = useState(false);
+
+  const handleAddItem = (e: any) => {
+    console.log("input value", e);
+  };
 
   //---------------table pagination function-----------------
   const [currentPage, setCurrentPage] = useState(0);
@@ -27,7 +34,15 @@ export const CompanyCMS = () => {
   };
 
   //----------------middle-tab----------------------
-  const tabdata: any = ["builder", "marketplace", "Dex"];
+  const tabdata: any = [
+    "食事・美容",
+    "ジム・マッサージ",
+    "旅行・レジャー",
+    "引越し",
+    "家事・育児",
+    "介護・福祉",
+    "その他",
+  ];
   const [allTabData, setAllTabData] = useState<any>(tabdata);
   const [selectTab, setSelectTab] = useState<string>(tabdata[0]);
 
@@ -54,14 +69,19 @@ export const CompanyCMS = () => {
   return (
     <div className={classes.root}>
       <div className={classes.title}>会社向けサービス</div>
-      <ActionTab
+      <CmsTab
         className={classes.actionTab}
         data={allTabData}
         action={(e) => handleTab(e)}
         select={selectTab}
         addEvent={(e) => handleNewItem(e)}
-        add
       />
+      <div className={classes.tableTool}>
+        <div className={classes.addBtn} onClick={() => setAddStatus(true)}>
+          サービス追加
+          <i className='fas fa-plus'></i>
+        </div>
+      </div>
 
       <ActionTable
         className={classes.tableRoot}
@@ -78,6 +98,11 @@ export const CompanyCMS = () => {
             columns={tableHeader}
           />
         }
+      />
+      <AddServiceModal
+        show={addStatus}
+        onClose={() => setAddStatus(false)}
+        action={(e) => handleAddItem(e)}
       />
     </div>
   );

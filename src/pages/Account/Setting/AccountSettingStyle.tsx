@@ -46,7 +46,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
     accountSettingTitle: {
       color: "#55727e",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
-      fontSize: "28px",
+      fontSize: "40px",
       fontWeight: 600,
       height: "auto",
       lineHeight: 1.4,
@@ -55,7 +55,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       transitionDelay: "300ms",
       transitionDuration: "1000ms",
       [theme.breakpoints.down(840)]: {
-        fontSize: "18px",
+        fontSize: "30px",
         transitionDelay: "300ms",
         transitionDuration: "1000ms",
       },
@@ -79,7 +79,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       marginBottom: "24px",
     },
     formTitle: {
-      color: "#55727e",
+      color: "#fff",
       fontFamily: "Lato",
       fontSize: "15px",
       fontWeight: 700,
@@ -145,7 +145,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       display: "flex",
       alignItems: "center",
       width: "100%",
-      color: "#55727e",
+      color: "#fff",
       fontFamily: "ヒラギノ角ゴ W3 JIS2004",
       fontSize: "14px",
       lineHeight: 1.4,

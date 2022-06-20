@@ -1,3 +1,5 @@
+/** @format */
+
 import { SidebarStyles } from "./SidebarStyles";
 import LogoImg from "../../assets/images/logo.webp";
 import avatar from "../../assets/images/avatar.png";
@@ -20,10 +22,7 @@ export default function Sidebar({
 }: SidebarProps) {
   const classes = SidebarStyles();
   const navigate = useNavigate();
-  const [rightPanel, setRightPanel] = useState(false);
-  const [rightRouters, setRightRouters] = useState<any>();
   const [showStaus, setShowStatus] = useState<boolean>(mobileStatus);
-  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     setShowStatus(mobileStatus);
@@ -37,41 +36,8 @@ export default function Sidebar({
     navigate("/account");
   };
 
-  const handleRightClose = () => {
-    setRightPanel(false);
-    isHidden && setShowStatus(false);
-  };
-
-  const handleWindowResize = useCallback((event: any) => {
-    if (window.innerWidth > 839) {
-      setIsHidden(false);
-    } else {
-      setIsHidden(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, [handleWindowResize]);
-
-  const handleRighPanel = (e: any) => {
-    if (!e.show) {
-      setRightPanel(false);
-      navigate(e.link);
-    } else {
-      setRightPanel(true);
-      setRightRouters(e.routers);
-    }
-  };
-
   const handleLink = (e: any) => {
-    setRightPanel(false);
-    isHidden && setShowStatus(false);
-    setRightPanel(false);
+    mobileStatus && handleClose();
     navigate(e);
   };
 
@@ -100,7 +66,7 @@ export default function Sidebar({
               <div
                 className={classes.sidebarItem}
                 key={key}
-                onClick={() => handleRighPanel(item.router)}>
+                onClick={() => handleLink(item.link)}>
                 <img
                   src={item.img}
                   className={classes.itemImg}
@@ -125,41 +91,6 @@ export default function Sidebar({
       <div className={classes.studyLink}>
         <img src={banner} className={classes.banner}></img>
       </div>
-      {rightPanel ? (
-        <>
-          <div className={classes.sidebarRight}>
-            <div className={classes.rightHeader}>
-              <div
-                className={classes.closeIcon}
-                onClick={() => setRightPanel(false)}>
-                <i className='fal fa-times'></i>
-              </div>
-            </div>
-            <div className={classes.rightContont}>
-              {rightRouters?.map((item: any, key: any) => {
-                return (
-                  <div
-                    className={classes.rightItem}
-                    key={key}
-                    onClick={() => handleLink(item?.link)}>
-                    <div className={classes.rightArrow}>
-                      <i className='far fa-arrow-right'></i>
-                    </div>
-                    <div className={classes.rightItemContent}>{item?.name}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className={classes.closeRightPart} onClick={handleRightClose}>
-            <div className={classes.closeRightRootIcon}>
-              <i className='fal fa-times'></i>
-            </div>
-          </div>
-        </>
-      ) : (
-        <></>
-      )}
     </>
   );
 }

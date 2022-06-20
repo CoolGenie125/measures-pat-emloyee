@@ -1,14 +1,21 @@
+/** @format */
+
 import { useEffect, useRef, useState } from "react";
 import { useStyles } from "./ActionDropDownStyles";
 
 interface ActionDropDownProps {
   children: React.ReactNode;
+  inputData: any;
 }
 
-export default function ActionDropDown({ children }: ActionDropDownProps) {
+export default function ActionDropDown({
+  children,
+  inputData,
+}: ActionDropDownProps) {
   const classes = useStyles();
   const [show, setShow] = useState(false);
   const [top, setTop] = useState(0);
+  const [select, setSelect] = useState(inputData[0]);
 
   const rootRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -33,6 +40,11 @@ export default function ActionDropDown({ children }: ActionDropDownProps) {
     }
   }, [dropdownRef, show]);
 
+  const handleSelect = (e: any) => {
+    setSelect(e);
+    setShow(false);
+  };
+
   return (
     <div className={classes.root} ref={rootRef}>
       <div className={classes.children} onClick={() => setShow(true)}>
@@ -56,18 +68,20 @@ export default function ActionDropDown({ children }: ActionDropDownProps) {
                 display: "none",
               }
         }>
-        <div className={classes.dropDownItem} onClick={() => setShow(false)}>
-          recent
-        </div>
-        <div className={classes.dropDownItem} onClick={() => setShow(false)}>
-          recent
-        </div>
-        <div className={classes.dropDownItem} onClick={() => setShow(false)}>
-          recent
-        </div>
-        <div className={classes.dropDownItem} onClick={() => setShow(false)}>
-          recent
-        </div>
+        {inputData?.map((item: any, key: any) => {
+          return (
+            <div
+              className={
+                select === item
+                  ? classes.activeDropDownItem
+                  : classes.dropDownItem
+              }
+              key={key}
+              onClick={(e) => handleSelect(item)}>
+              {item}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

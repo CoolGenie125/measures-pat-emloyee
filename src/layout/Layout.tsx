@@ -26,8 +26,6 @@ export default function Layout() {
   const handleWindowResize = useCallback((event: any) => {
     if (window.innerWidth > 839) {
       setStatus(true);
-    } else {
-      setStatus(false);
     }
   }, []);
 

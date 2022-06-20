@@ -1,131 +1,113 @@
 import sidebar1 from "../assets/icons/sidebar-icon1.png";
 import sidebar2 from "../assets/icons/sidebar-icon2.png";
 import sidebar3 from "../assets/icons/sidebar-icon3.png";
-import sidebar4 from "../assets/icons/sidebar-icon4.png";
 
 export const SidbarData = [
   {
     img: sidebar1,
     content: "アカウント設定",
-    router: {
-      show: false,
-      link: "/account",
-    },
+    link: "/account",
   },
   {
     img: sidebar2,
     content: "クライアント 一覧",
-    router: {
-      show: false,
-      link: "/clientlist"
-    },
+    link: "/clientlist",
   },
   {
     img: sidebar3,
     content: "CMS",
-    router: {
-      show: false,
-      link: "/cms"
-    },
+    link: "/cms",
   },
-  // {
-  //   img: sidebar4,
-  //   content: "アカウント",
-  //   router: {
-  //     show: false,
-  //     link: "/account",
-  //   },
-  // },
 ];
 
-export const clientListArray:any =[
+export const clientListArray: any = [
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfasasdfasdfasd",
+    name: "asdfasasdfasdfasd",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfasasdf",
+    name: "asdfasasdf",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfasdd",
+    name: "asdfasdd",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
   {
-    name:"asdfas",
+    name: "asdfas",
     company: "asdfasdf",
     companyemail: "company.name@gmail.com",
     personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
-  },{
-    name:"asdfas",
-    company: "asdfasdf",
-    companyemail: "company.name@gmail.com",
-    personalemail: "geniesake@gmail.com",
-    phone: '000-0000-000',
+    phone: "000-0000-000",
   },
-
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
 ];
 
-export const cmsListArray:any = [
+export const cmsListArray: any = [
   {
     category: "Web production",
     price: "150,000 yen",

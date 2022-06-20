@@ -6,7 +6,7 @@ import { useState } from "react";
 import ConfirmModal from "components/ConfirmModal/ConfirmModal";
 import ActionDropDown from "components/ActionDropDown/ActionDropDown";
 
-interface StagingTableProps {
+interface TableContentProps {
   columns?: any;
   rows: any;
   pageNumber: number;
@@ -18,7 +18,7 @@ const TableContent = ({
   perPageNumber,
   columns,
   rows,
-}: StagingTableProps) => {
+}: TableContentProps) => {
   const classes = useStyles();
 
   const [deleteModalStatus, setDeleteModalStatus] = useState(false);
@@ -50,7 +50,7 @@ const TableContent = ({
               {row.description}
             </TableCell>
             <TableCell className={clsx(classes.tableCell, classes.action)}>
-              <ActionDropDown>
+              <ActionDropDown inputData={["クライアント", "管理者", "従業員"]}>
                 <div
                   className={clsx(classes.actionIcon, classes.marginRight10)}>
                   <i className='far fa-edit'></i>

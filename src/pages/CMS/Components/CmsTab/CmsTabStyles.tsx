@@ -7,6 +7,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "flex-start",
       alignItems: "center",
       width: "100%",
+      overflowX: "scroll",
     },
     item: {
       padding: "16px 0",
@@ -21,6 +22,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       borderTop: "2px solid transparent",
       wordBreak: "keep-all",
       opacity: 0.5,
+      minWidth: "100px",
       "&:hover": {
         opacity: 1,
       },
