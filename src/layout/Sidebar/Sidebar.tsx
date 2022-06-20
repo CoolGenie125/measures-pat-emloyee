@@ -1,11 +1,8 @@
-/** @format */
-
 import { SidebarStyles } from "./SidebarStyles";
 import LogoImg from "../../assets/images/logo.webp";
 import avatar from "../../assets/images/avatar.png";
 import banner from "../../assets/images/banner.png";
 import { SidbarData } from "config/constant";
-import { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import MobileSidebar from "./MobileSidebar/MobileSidebar";
@@ -24,7 +21,6 @@ export default function Sidebar({
   const classes = SidebarStyles();
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("here: ", location);
 
   return (
     <>
