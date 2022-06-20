@@ -1,5 +1,3 @@
-/** @format */
-
 import { SidebarStyles } from "./SidebarStyles";
 import LogoImg from "../../assets/images/logo.webp";
 import avatar from "../../assets/images/avatar.png";

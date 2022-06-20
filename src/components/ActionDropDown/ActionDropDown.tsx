@@ -1,5 +1,3 @@
-/** @format */
-
 import { useEffect, useRef, useState } from "react";
 import { useStyles } from "./ActionDropDownStyles";
 
@@ -15,7 +13,7 @@ export default function ActionDropDown({
   const classes = useStyles();
   const [show, setShow] = useState(false);
   const [top, setTop] = useState(0);
-  const [select, setSelect] = useState(inputData[0]);
+  const [select, setSelect] = useState("");
 
   const rootRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
