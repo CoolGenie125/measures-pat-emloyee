@@ -15,7 +15,6 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
       transition: ".3s cubic-bezier(.4,.4,0,1)",
       [theme.breakpoints.down(840)]: {
         display: "none",
-        width: "50%",
       },
     },
     logoImg: {
@@ -144,36 +143,6 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
     banner: {
       width: "97px",
       height: "19px",
-    },
-    closePart: {
-      display: "none",
-      [theme.breakpoints.down(840)]: {
-        left: "50%",
-        width: "50%",
-        position: "fixed",
-        top: 0,
-        height: "100%",
-        display: "flex",
-        justifyContent: "right",
-        padding: "30px",
-        zIndex: 2,
-        backgroundColor: "rgb(0, 0, 0, 0.7)",
-        boxSizing: "border-box",
-      },
-    },
-    closeRootIcon: {
-      cursor: "pointer",
-      "& i": {
-        color: "#fff",
-        fontSize: "35px",
-        lineHeight: "35px",
-      },
-    },
-    displayNone: {
-      display: "none",
-    },
-    displayShow: {
-      display: "unset",
     },
   })
 );
