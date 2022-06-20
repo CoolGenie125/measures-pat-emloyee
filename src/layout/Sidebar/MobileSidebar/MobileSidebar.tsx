@@ -1,52 +1,58 @@
-/** @format */
-
-import { SidebarStyles } from "./SidebarStyles";
-import LogoImg from "../../assets/images/logo.webp";
-import avatar from "../../assets/images/avatar.png";
-import banner from "../../assets/images/banner.png";
+import { useStyles } from "./MobileSidebarStyles";
+import LogoImg from "../../../assets/images/logo.webp";
+import avatar from "../../../assets/images/avatar.png";
+import banner from "../../../assets/images/banner.png";
 import { SidbarData } from "config/constant";
-import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
-import MobileSidebar from "./MobileSidebar/MobileSidebar";
 
-interface SidebarProps {
+interface MobileSidebarContentProps {
   className?: any;
   mobileStatus: boolean;
-  action: () => void;
+  moblieClose: () => void;
 }
 
-export default function Sidebar({
+export default function MobileSidebarContent({
   className,
   mobileStatus,
-  action,
-}: SidebarProps) {
-  const classes = SidebarStyles();
+  moblieClose,
+}: MobileSidebarContentProps) {
+  const classes = useStyles();
   const navigate = useNavigate();
+
+  const handleLink = (e: any) => {
+    moblieClose();
+    navigate(e);
+  };
 
   return (
     <>
-      <div className={clsx(classes.root, className)}>
+      <div
+        className={clsx(
+          classes.root,
+          className,
+          mobileStatus ? classes.displayShow : classes.displayNone
+        )}>
         <img
           src={LogoImg}
           className={classes.logoImg}
           alt='logo'
-          onClick={() => navigate("/")}
+          onClick={() => handleLink("/")}
         />
         <div
           className={classes.avatarRoot}
-          onClick={() => navigate("/account")}>
+          onClick={() => handleLink("/account")}>
           <img src={avatar} className={classes.avatarImg} />
           <div className={classes.avatarName}>しさく くらら</div>
           <div className={classes.avatarJob}>合同会社施策ぱっと</div>
         </div>
-        <div className={classes.sidebarContent}>
+        <div className={classes.mobileSidebarContent}>
           {SidbarData.map((item: any, key: any) => {
             return (
               <div
-                className={classes.sidebarItem}
+                className={classes.mobileSidebarItem}
                 key={key}
-                onClick={() => navigate(item.link)}>
+                onClick={() => handleLink(item.link)}>
                 <img
                   src={item.img}
                   className={classes.itemImg}
@@ -64,7 +70,16 @@ export default function Sidebar({
           <img src={banner} className={classes.banner}></img>
         </div>
       </div>
-      <MobileSidebar mobileStatus={mobileStatus} moblieClose={action} />
+      <div
+        className={mobileStatus ? classes.closePart : classes.displayNone}
+        onClick={moblieClose}>
+        <div className={classes.closeRootIcon}>
+          <i className='fal fa-times'></i>
+        </div>
+      </div>
+      <div className={classes.studyLink}>
+        <img src={banner} className={classes.banner}></img>
+      </div>
     </>
   );
 }
