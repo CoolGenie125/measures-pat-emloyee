@@ -6,7 +6,7 @@ import avatar from "../../assets/images/avatar.png";
 import banner from "../../assets/images/banner.png";
 import { SidbarData } from "config/constant";
 import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import MobileSidebar from "./MobileSidebar/MobileSidebar";
 
@@ -23,6 +23,8 @@ export default function Sidebar({
 }: SidebarProps) {
   const classes = SidebarStyles();
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log("here: ", location);
 
   return (
     <>
@@ -44,7 +46,11 @@ export default function Sidebar({
           {SidbarData.map((item: any, key: any) => {
             return (
               <div
-                className={classes.sidebarItem}
+                className={
+                  location.pathname === item.link
+                    ? classes.activeSidebarItem
+                    : classes.sidebarItem
+                }
                 key={key}
                 onClick={() => navigate(item.link)}>
                 <img

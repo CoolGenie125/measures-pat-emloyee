@@ -11,7 +11,7 @@ export const PersonalCMS = () => {
   const classes = useStyles();
   const navigate = useNavigate();
 
-  const tableHeader = ["No", "Category", "Price", "Description", "Action"];
+  const tableHeader = ["No", "カテゴリー", "価格情報", "説明", "アクション"];
 
   //--------------add item modal function---------------------------
   const [addStatus, setAddStatus] = useState(false);

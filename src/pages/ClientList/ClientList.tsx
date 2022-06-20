@@ -8,12 +8,12 @@ import { ClientListStyles } from "./ClientListStyles";
 
 export const tableHeader = [
   "No",
-  "Name",
-  "Company Name",
-  "Company Email",
-  "Personal Email",
-  "Phone",
-  "Action",
+  "名前",
+  "会社名",
+  "会社のメール",
+  "個人的なメール",
+  "電話",
+  "アクション",
 ];
 
 export const ClientList = () => {

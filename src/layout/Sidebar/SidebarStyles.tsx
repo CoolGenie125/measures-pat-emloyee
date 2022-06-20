@@ -80,8 +80,20 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
       margin: "0 12px",
       cursor: "pointer",
       "&:hover": {
-        background: "#21263F",
+        background: "#2f3656",
       },
+    },
+    activeSidebarItem:{
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "71px",
+      transition: ".3s cubic-bezier(.4,.4,0,1)",
+      margin: "0 12px",
+      cursor: "pointer",
+      background: "#2f3656",
+
     },
     itemImg: {
       background: "rgba(0,0,0,0.0)",
@@ -117,6 +129,34 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
     itemBtn: {
       "& i": {
         color: "#9ab0bc",
+        fontSize: "24px",
+        height: "20px",
+        width: "16px",
+      },
+    },
+    activeItemContent: {
+      color: "#fff",
+      fontFamily: "ヒラギノ角ゴ W6 JIS2004",
+      fontSize: "16px",
+      fontWeight: 600,
+      height: "auto",
+      letterSpacing: "0.15em",
+      lineHeight: "1.4",
+      padding: "0 12px",
+      minWidth: "171.2px",
+      boxSizing: "border-box",
+      textAlign: "start",
+      [theme.breakpoints.down(500)]: {
+        minWidth: "133px",
+      },
+      [theme.breakpoints.down(400)]: {
+        minWidth: "80px",
+        fontSize: "12px",
+      },
+    },
+    activeItemBtn: {
+      "& i": {
+        color: "#fff",
         fontSize: "24px",
         height: "20px",
         width: "16px",
