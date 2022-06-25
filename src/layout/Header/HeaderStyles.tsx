@@ -41,7 +41,7 @@ export const HeaderStyles = makeStyles((theme: Theme) =>
     },
     searchRoot: {
       marginLeft: "12px",
-      width: "calc(100% - 348px)",
+      width: "fit-content",
       height: "50px",
       padding: "0 24px",
       display: "flex",
@@ -51,12 +51,6 @@ export const HeaderStyles = makeStyles((theme: Theme) =>
       minWidth: "200px",
       transitionDelay: "300ms",
       transitionDuration: "1000ms",
-      [theme.breakpoints.down(840)]: {
-        width: "100%",
-        height: "36px",
-      },
-      // [theme.breakpoints.down(475)]: {
-      // },
     },
     searchIcon: {
       "& i": {

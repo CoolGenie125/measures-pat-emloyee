@@ -66,9 +66,6 @@ export default function MobileSidebarContent({
             );
           })}
         </div>
-        <div className={classes.studyLink}>
-          <img src={banner} className={classes.banner}></img>
-        </div>
       </div>
       <div
         className={mobileStatus ? classes.closePart : classes.displayNone}
@@ -76,9 +73,6 @@ export default function MobileSidebarContent({
         <div className={classes.closeRootIcon}>
           <i className='fal fa-times'></i>
         </div>
-      </div>
-      <div className={classes.studyLink}>
-        <img src={banner} className={classes.banner}></img>
       </div>
     </>
   );

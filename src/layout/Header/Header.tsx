@@ -23,9 +23,9 @@ export default function Header({ mobileAction }: HeaderProps) {
       </div>
       <div className={classes.searchRoot}>
         <div className={classes.searchIcon}>
-          <i className='far fa-search'></i>
+          <i className="fas fa-home"></i>
         </div>
-        <div className={classes.searchInput}>キーワードから探す</div>
+        <div className={classes.searchInput}>従業員</div>
       </div>
     </div>
   );

@@ -124,28 +124,6 @@ export const useStyles = makeStyles((theme: Theme) =>
         width: "16px",
       },
     },
-    studyLink: {
-      position: "fixed",
-      bottom: "20px",
-      left: "20px",
-      width: "auto",
-      height: "28px",
-      borderRadius: "4px",
-      backgroundColor: "#fff",
-      boxShadow: "0 2px 4px rgb(0 0 0 / 14%)",
-      zIndex: 2000,
-      perspective: "300px",
-      transition: "0s linear",
-      display: "flex",
-      alignContent: "center",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "0 12px",
-    },
-    banner: {
-      width: "97px",
-      height: "19px",
-    },
     closePart: {
       display: "none",
       [theme.breakpoints.down(840)]: {

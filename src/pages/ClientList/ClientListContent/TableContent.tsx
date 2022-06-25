@@ -55,17 +55,20 @@ const TableContent = ({
             <TableCell className={clsx(classes.tableCell)}>
               {row.phone}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell, classes.action)}>
-              <ActionDropDown inputData={["クライアント", "管理者", "従業員"]}>
+            <TableCell className={clsx(classes.tableCell)}>
+              <div className={classes.action}>
+                <ActionDropDown
+                  inputData={["クライアント", "管理者", "従業員"]}>
+                  <div
+                    className={clsx(classes.actionIcon, classes.marginRight10)}>
+                    <i className='fas fa-user-edit'></i>
+                  </div>
+                </ActionDropDown>
                 <div
-                  className={clsx(classes.actionIcon, classes.marginRight10)}>
-                  <i className='fas fa-user-edit'></i>
+                  className={classes.actionIcon}
+                  onClick={handleConfirmModalOpen}>
+                  <i className='fas fa-trash-alt'></i>
                 </div>
-              </ActionDropDown>
-              <div
-                className={classes.actionIcon}
-                onClick={handleConfirmModalOpen}>
-                <i className='fas fa-trash-alt'></i>
               </div>
             </TableCell>
           </TableRow>

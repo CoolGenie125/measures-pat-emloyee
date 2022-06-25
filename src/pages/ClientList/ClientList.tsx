@@ -56,12 +56,6 @@ export const ClientList = () => {
             />
           }
         />
-        <ActionButton
-          className={classes.backHomeBtn}
-          type='dark'
-          content='HOME へ戻る'
-          action={() => navigate("/")}
-        />
       </div>
     </div>
   );

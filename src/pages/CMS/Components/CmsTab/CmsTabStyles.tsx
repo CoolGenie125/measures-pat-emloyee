@@ -39,6 +39,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       opacity: 1,
       borderTop: "2px solid #FF7C4C",
       wordBreak: "keep-all",
+      minWidth: "100px",
     },
     tabAdd: {
       margin: "0 10px",

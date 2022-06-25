@@ -6,7 +6,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "Lato",
     color: "white !important",
     fontWeight: "normal",
-    borderBottom: "solid 1px #282E4E !important",
     "&.MuiTableCell-root": {
       padding: "10px 10px 10px 20px !important",
     },

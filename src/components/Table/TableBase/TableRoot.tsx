@@ -33,6 +33,12 @@ const useStyles = makeStyles((theme: Theme) =>
         border: "none",
         padding: "0px",
         marginBottom: "20px",
+        "& .MuiTableRow-root": {
+          borderBottom: "solid 1px #282E4E",
+        },
+        "& .MuiTableBody-root .MuiTableRow-root:last-child": {
+          borderBottom: "solid 1px transparent",
+        },
       },
       "& .MuiTableCell-root": {
         whiteSpace: "nowrap",
@@ -55,7 +61,6 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "Lato",
       "&.MuiTableCell-root": {
         padding: "10px 10px 10px 20px",
-        borderBottom: "solid 1px #282E4E",
       },
     },
     tableCell: {
