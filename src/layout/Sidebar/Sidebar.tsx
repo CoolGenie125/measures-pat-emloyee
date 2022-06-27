@@ -1,5 +1,5 @@
 import { SidebarStyles } from "./SidebarStyles";
-import LogoImg from "../../assets/images/logo.webp";
+import LogoImg from "../../assets/images/logo.png";
 import avatar from "../../assets/images/avatar.png";
 import banner from "../../assets/images/banner.png";
 import { SidbarData } from "config/constant";

@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       marginBottom: "50px",
     },
     title: {
-      color: "#fff",
+      color: "#F29D43",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "40px",
       fontWeight: 600,
@@ -39,7 +39,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     addBtn: {
       cursor: "pointer",
       width: "fit-content",
-      color: "#fff",
+      color: "#000",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "18px",
       fontWeight: 600,
@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme: Theme) =>
         marginLeft: "10px",
         fontSize: "18px",
         lineHeight: "18px",
-        color: "#fff",
+        color: "#000",
       },
       "&:hover": {
         opacity: 0.5,

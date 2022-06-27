@@ -1,5 +1,5 @@
 import { HeaderStyles } from "./HeaderStyles";
-import LogoImg from "../../assets/images/logo.webp";
+import LogoImg from "../../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {

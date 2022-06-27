@@ -3,20 +3,17 @@ import { makeStyles } from "@material-ui/styles";
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: "none",
       position: "fixed",
       textAlign: "center",
-      width: "300px",
       boxSizing: "border-box",
-      background: "#21263F",
+      background: "#f5b673",
       padding: "48px 12px 48px 12px",
-      borderRight: "1px solid #323A5F",
       height: "100%",
       zIndex: 2,
       transition: ".3s cubic-bezier(.4,.4,0,1)",
-      [theme.breakpoints.down(840)]: {
-        display: "unset",
-        width: "50%",
+      width: "50%",
+      [theme.breakpoints.up(840)]: {
+        display: "none !important",
       },
     },
     logoImg: {
@@ -56,7 +53,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       height: "16px",
     },
     avatarJob: {
-      color: "#9ab0bc",
+      color: "#fff",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "12px",
       fontWeight: 600,
@@ -64,26 +61,39 @@ export const useStyles = makeStyles((theme: Theme) =>
       lineHeight: "1.4",
       height: "16px",
       marginTop: "12px",
+      opacity: 0.5,
     },
     mobileSidebarContent: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      background: "#323A5F",
       borderRadius: "15px",
     },
     mobileSidebarItem: {
       width: "100%",
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "space-around",
       height: "71px",
       transition: ".3s cubic-bezier(.4,.4,0,1)",
       margin: "0 12px",
       cursor: "pointer",
+      borderBottom: "1px solid #fff",
       "&:hover": {
-        background: "#21263F",
+        opacity: 0.5,
       },
+    },
+    activeMobileSidebarItem: {
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-around",
+      height: "71px",
+      transition: ".3s cubic-bezier(.4,.4,0,1)",
+      margin: "0 12px",
+      cursor: "pointer",
+      borderBottom: "1px solid #fff",
+      opacity: 0.5,
     },
     itemImg: {
       background: "rgba(0,0,0,0.0)",
@@ -97,7 +107,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       },
     },
     itemContent: {
-      color: "#9ab0bc",
+      color: "#fff",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "16px",
       fontWeight: 600,
@@ -118,7 +128,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     itemBtn: {
       "& i": {
-        color: "#9ab0bc",
+        color: "#fff",
         fontSize: "24px",
         height: "20px",
         width: "16px",

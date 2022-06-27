@@ -5,7 +5,7 @@ export const FooterStyles = makeStyles((theme: Theme) =>
     root: {
       display: "flex",
       position: "relative",
-      background: "#192225",
+      background: "#fff",
       margin: "0px 0px 0px 0px",
       width: "calc(100% - 300px)",
       marginLeft: "300px",

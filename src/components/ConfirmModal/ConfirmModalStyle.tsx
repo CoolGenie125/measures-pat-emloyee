@@ -23,7 +23,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     boxSizing: "border-box",
     width: "620px",
     height: "fit-content",
-    background: "#282E4E",
+    background: "#fff",
     boxShadow: "0px 0px 30px rgba(55, 55, 79, 0.05)",
     borderRadius: "10px",
     textAlign: "center",
@@ -39,13 +39,13 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 600,
     fontSize: "20px",
     lineHeight: "50px",
-    color: "#FFFFFF",
+    color: "#F29D43",
   },
   mainContainer: {
     padding: "0px 50px",
   },
   descContainer: {
-    color: "#96A1DB",
+    color: "#000",
     fontFamily: "Lato",
     fontWeight: 400,
     fontSize: "18px",
@@ -65,13 +65,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
   cancelBtn: {
     width: "100% !important",
     marginBottom: "20px",
-    border: "1px solid #323A5F",
     marginRight: "15px",
   },
   confirmBtn: {
-    background: "#ff3a68",
     marginBottom: "20px",
-    width: "100%",
+    width: "100% !important",
     [theme.breakpoints.down(570)]: {
       marginLeft: "0px",
     },

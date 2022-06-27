@@ -4,12 +4,12 @@ export const ActionInputStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
-      color: "#fff",
+      color: "#333",
       background: "transparent",
       fontFamily: "Lato",
       fontSize: "15px",
       fontWeight: 400,
-      border: "1px solid #373F66",
+      border: "1px solid #eee",
       borderRadius: "4px",
       lineHeight: 1.4,
       letterSpacing: "0.05em",
@@ -25,7 +25,7 @@ export const ActionInputStyles = makeStyles((theme: Theme) =>
         fontWeight: 400,
         lineHeight: 1.4,
         letterSpacing: "0.05em",
-        color: "#ffffff70",
+        color: "#E8E8E8",
         opacity: 1 /* Firefox */,
       },
       "&:focus-visible":{

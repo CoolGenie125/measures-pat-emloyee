@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 export const AccountSettingStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: "#21263F",
+      backgroundColor: "#f4dcc0",
       padding: "96px 48px 96px 48px",
       boxSizing: "border-box",
       [theme.breakpoints.down(840)]: {
@@ -23,7 +23,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       },
     },
     container: {
-      background: "#323A5F",
+      background: "#fff",
       borderRadius: "10px",
       boxShadow: "40px 50px 30px rgb(0 0 0 / 10%)",
       padding: "96px",
@@ -44,7 +44,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       },
     },
     accountSettingTitle: {
-      color: "#55727e",
+      color: "#F29D43",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "40px",
       fontWeight: 600,
@@ -79,7 +79,7 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
       marginBottom: "24px",
     },
     formTitle: {
-      color: "#fff",
+      color: "#000",
       fontFamily: "Lato",
       fontSize: "15px",
       fontWeight: 700,
@@ -139,13 +139,13 @@ export const AccountSettingStyles = makeStyles((theme: Theme) =>
     },
     formBtn: {
       marginTop: "24px",
-      background: "#333333",
+      // background: "#333333",
     },
     policy: {
       display: "flex",
       alignItems: "center",
       width: "100%",
-      color: "#fff",
+      color: "#000",
       fontFamily: "ヒラギノ角ゴ W3 JIS2004",
       fontSize: "14px",
       lineHeight: 1.4,

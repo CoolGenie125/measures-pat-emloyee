@@ -4,7 +4,7 @@ export const LayoutStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {},
     container: {
-      background: "#21263F",
+      background: "#f4dcc0",
       width: "calc(100% - 300px)",
       marginLeft: "300px",
       minHeight: "calc(100vh - 98px)",

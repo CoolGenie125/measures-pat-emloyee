@@ -156,7 +156,7 @@ export const StyledPaginationBtn = withStyles({
     backgroundColor: "rgba(51,122,254,.1)",
     maxHeight: "30px",
     borderColor: "#e7eaf3",
-    color: "#3498db",
+    color: "#F29D43",
     fontSize: "12px",
     lineHeight: 1.5,
     textTransform: "none",
@@ -164,7 +164,7 @@ export const StyledPaginationBtn = withStyles({
     borderRadius: "6px",
     "&:hover": {
       color: "white",
-      backgroundColor: "#3498db",
+      backgroundColor: "#F29D43",
     },
   },
 })(Button);

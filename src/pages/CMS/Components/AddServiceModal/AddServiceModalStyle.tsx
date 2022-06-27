@@ -14,16 +14,16 @@ export const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: "rgba(0, 0, 0, 0.7)",
     overflowY: "scroll",
     padding: "16px",
-    display:"flex",
+    display: "flex",
     justifyContent: "center",
-    alignItems:"center",
+    alignItems: "center",
   },
   modalRoot: {
     padding: "30px 35px",
     boxSizing: "border-box",
     width: "620px",
     height: "fit-content",
-    background: "#282E4E",
+    background: "#fff",
     boxShadow: "0px 0px 30px rgba(55, 55, 79, 0.05)",
     borderRadius: "10px",
     textAlign: "center",
@@ -39,7 +39,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 600,
     fontSize: "20px",
     lineHeight: "50px",
-    color: "#FFFFFF",
+    color: "#F29D43",
   },
   mainContainer: {
     padding: "0px 50px",
@@ -48,7 +48,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   descContainer: {
-    color: "#96A1DB",
+    color: "#000",
     fontFamily: "Lato",
     fontWeight: 400,
     fontSize: "18px",
@@ -69,13 +69,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
   cancelBtn: {
     width: "100% !important",
     marginBottom: "20px",
-    border: "1px solid #323A5F",
     marginRight: "15px",
   },
   confirmBtn: {
-    background: "#ff3a68",
     marginBottom: "20px",
-    width: "100%",
+    width: "100% !important",
     [theme.breakpoints.down(570)]: {
       marginLeft: "0px",
     },
@@ -88,7 +86,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   formTitle: {
     minWidth: "100px",
     marginRight: "5px",
-    color: "#96A1DB",
+    color: "#000",
     fontFamily: "Lato",
     fontWeight: 400,
     fontSize: "18px",
@@ -96,7 +94,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textAlign: "center",
   },
   formInput: {
-    color: "#96A1DB",
+    color: "#000",
     fontFamily: "Lato",
     fontWeight: 400,
     fontSize: "18px",
@@ -134,7 +132,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   importLetter: {
-    color: "#ffffff70",
+    color: "#000",
     fontFamily: "Lato",
     fontSize: "14px",
     fontWeight: 400,

@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       bottom: 0,
       right: 0,
       minWidth: "150px",
-      background: "#1A1F37",
+      background: "#F29D43",
       borderRadius: "15px",
       zIndex: 10,
       padding: "10px 0",
@@ -22,14 +22,14 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontSeight: 400,
       fontSize: "14px",
       lineHeight: "40px",
-      color: "#70708F",
+      color: "#fff",
       postion: "relative",
       cursor: "pointer",
       "&:hover": {
-        color: "#fff",
+        opacity: 0.5,
       },
     },
-    activeDropDownItem:{
+    activeDropDownItem: {
       padding: "0 20px",
       fontFamily: "Lato",
       fontStyle: "normal",
@@ -38,6 +38,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       lineHeight: "40px",
       color: "#fff",
       postion: "relative",
+      opacity: 0.5,
       cursor: "pointer",
     },
     displayNone: {
