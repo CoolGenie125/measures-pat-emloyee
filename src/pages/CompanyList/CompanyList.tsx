@@ -2,8 +2,8 @@ import ActionTable from "components/Table/ActionTable";
 import { clientListArray } from "config/constant";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TableContent from "./ClientListContent/TableContent";
-import { ClientListStyles } from "./ClientListStyles";
+import TableContent from "./CompanyListContent/TableContent";
+import { useStyles } from "./CompanyListStyles";
 
 export const tableHeader = [
   "No",
@@ -16,7 +16,7 @@ export const tableHeader = [
 ];
 
 export const ClientList = () => {
-  const classes = ClientListStyles();
+  const classes = useStyles();
   const navigate = useNavigate();
 
   //-----------pagination function------------------------
@@ -35,9 +35,9 @@ export const ClientList = () => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <div className={classes.clientListTitle}>利用企業一覧</div>
+        <div className={classes.clientListTitle}>掲載元企業一覧</div>
         <div className={classes.clientListSmallTitle}>
-          サービスを受け入れるクライアントのリストです。
+          サービスを受け入れる会社のリストです。
         </div>
         <ActionTable
           className={classes.tableRoot}

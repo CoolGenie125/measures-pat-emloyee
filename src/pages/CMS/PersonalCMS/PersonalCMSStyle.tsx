@@ -45,6 +45,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 600,
       height: "auto",
       lineHeight: 1.4,
+      marginBottom: "50px",
       "& i": {
         marginLeft: "10px",
         fontSize: "18px",

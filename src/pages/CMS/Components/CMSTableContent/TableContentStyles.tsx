@@ -19,6 +19,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   action: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
   },
   actionIcon: {
     "& i": {
