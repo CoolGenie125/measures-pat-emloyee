@@ -2,6 +2,9 @@ import { useStyles } from "./AddServiceModalStyle";
 import { useState, useEffect, useRef } from "react";
 import ActionButton from "components/ActionButton/ActionButton";
 import ActionInput from "components/ActionInput/ActionInput";
+import ActionQuill from "components/ActionQuill/ActionQuill";
+import ActionSelect from "components/ActionSelect/ActionSelect";
+import { CategoryList, CompanyNameList } from "config/constant";
 
 interface AddServiceModalProps {
   show: boolean;
@@ -16,36 +19,95 @@ export default function AddServiceModal({
   const classes = useStyles();
 
   const [showStatus, setShowStatus] = useState(show);
+  const [companyName, setCompanyName] = useState("");
+  const [serviceName, setServiceName] = useState("");
+  const [serviceOverview, setServiceOverview] = useState("");
+  const [freeEditor, setFreeEditor] = useState<any>();
   const [category, setCategory] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
 
   const rootRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  //---input img function------------------
-  const inputFile = useRef<HTMLInputElement>(null);
-  const [importImg, setImportImg] = useState<any>();
+  //---logo img import function------------------
+  const LogoInputFile = useRef<HTMLInputElement>(null);
+  const [importLogoImg, setImportLogoImg] = useState<any>();
 
-  const onImgImport = ({
+  const onLogoImgImport = ({
     currentTarget: { files, name },
   }: React.ChangeEvent<HTMLInputElement>) => {
-    if (files && files.length && name === "importImg") setImportImg(files[0]);
+    if (files && files.length && name === "importLogoImg")
+      setImportLogoImg(files[0]);
   };
 
-  const handleFileInput = () => {
-    if (inputFile.current) {
-      inputFile.current.click();
+  const handleLogoFileInput = () => {
+    if (LogoInputFile.current) {
+      LogoInputFile.current.click();
     }
+  };
+
+  //---company name import function-------------------
+
+  const handleCompanyName = (e: any) => {
+    setCompanyName(e.target.value);
+  };
+
+  //----service title import function---------------------
+
+  const handleServiceName = (e: any) => {
+    setServiceName(e.target.value);
+  };
+
+  //---main image import function----------------
+
+  const MainInputFile = useRef<HTMLInputElement>(null);
+  const [importMainImg, setImportMainImg] = useState<any>();
+
+  const onMainImgImport = ({
+    currentTarget: { files, name },
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    if (files && files.length && name === "importMainImg")
+      setImportMainImg(files[0]);
+  };
+
+  const handleMainFileInput = () => {
+    if (MainInputFile.current) {
+      MainInputFile.current.click();
+    }
+  };
+
+  //--------service overview import function----------
+
+  const handleServiceOverview = (e: any) => {
+    setServiceOverview(e.target.value);
+  };
+
+  //---------free editor import function-----------
+
+  const handleQuill = (e: any) => {
+    console.log(
+      "free ediotr import value: ",
+      e.getCurrentContent().getPlainText()
+    );
+    setFreeEditor(e);
+  };
+
+  //-----------category import function-------------
+
+  const handleCategory = (e: any) => {
+    setCategory(e.target.value);
   };
 
   const handleNext = () => {
     let inputProps: any = {
+      company_logo: URL.createObjectURL(importLogoImg),
+      company_name: companyName,
+      service_title: serviceName,
+      main_img: URL.createObjectURL(importMainImg),
+      service_overview: serviceOverview,
+      free_editor: freeEditor,
       category: category,
-      price: price,
-      des: description,
-      img: URL.createObjectURL(importImg),
     };
+    console.log("all import value : ", inputProps);
     action(inputProps);
   };
 
@@ -83,55 +145,98 @@ export default function AddServiceModal({
             <div className={classes.descContainer}>
               以下の入力を正確に記入してください
             </div>
-            <div className={classes.imgLoaderRoot}>
-              <div className={classes.imgLoader} onClick={handleFileInput}>
+            <div className={classes.logoImgLoaderRoot}>
+              <div
+                className={classes.logoImgLoader}
+                onClick={handleLogoFileInput}>
                 <input
                   id='fileimport'
-                  name='importImg'
+                  name='importLogoImg'
                   accept='image/*'
                   type='file'
                   autoComplete='off'
                   tabIndex={-1}
                   style={{ display: "none" }}
-                  ref={inputFile}
-                  onChange={onImgImport}
+                  ref={LogoInputFile}
+                  onChange={onLogoImgImport}
                 />
-                {importImg ? (
+                {importLogoImg ? (
                   <img
-                    src={URL.createObjectURL(importImg)}
-                    alt='image'
-                    className={classes.importImg}
+                    src={URL.createObjectURL(importLogoImg)}
+                    alt='logoImage'
+                    className={classes.importLogoImg}
                   />
                 ) : (
                   <div className={classes.importLetter}>
-                    サービス画像を選択してください
+                    会社のロゴ画像を選択してください
                   </div>
                 )}
               </div>
             </div>
-
+            <div className={classes.form}>
+              <div className={classes.formTitle}>会社名</div>
+              <ActionSelect
+                items={CompanyNameList}
+                select={(e) => handleCompanyName(e)}
+                placeholder='正しい会社名を選択してください'
+              />
+            </div>
+            <div className={classes.form}>
+              <div className={classes.formTitle}>サービス名</div>
+              <ActionInput
+                value={serviceName}
+                action={(e) => handleServiceName(e)}
+                placeholder='正しいサービス名を入力してください'
+              />
+            </div>
+            <div className={classes.mainImgLoaderRoot}>
+              <div
+                className={classes.mainImgLoader}
+                onClick={handleMainFileInput}>
+                <input
+                  id='fileimport'
+                  name='importMainImg'
+                  accept='image/*'
+                  type='file'
+                  autoComplete='off'
+                  tabIndex={-1}
+                  style={{ display: "none" }}
+                  ref={MainInputFile}
+                  onChange={onMainImgImport}
+                />
+                {importMainImg ? (
+                  <img
+                    src={URL.createObjectURL(importMainImg)}
+                    alt='image'
+                    className={classes.importMainImg}
+                  />
+                ) : (
+                  <div className={classes.importLetter}>
+                    サービスのメイン画像を選択してください
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={classes.form}>
+              <div className={classes.formTitle}>サービスの概要</div>
+              <ActionInput
+                value={serviceOverview}
+                action={(e) => handleServiceOverview(e)}
+                placeholder='正しいサービスの概要を入力してください'
+              />
+            </div>
+            <div className={classes.form}>
+              <div className={classes.formTitle}>自由編集</div>
+              <div className={classes.quillWrap}>
+                <ActionQuill action={(e) => handleQuill(e)} />
+              </div>
+            </div>
             <div className={classes.form}>
               <div className={classes.formTitle}>カテゴリー</div>
-              <ActionInput
-                value={category}
-                action={(e) => setCategory(e)}
-                placeholder='このフィールドにサービスカテゴリを入力してください'
-              />
-            </div>
-            <div className={classes.form}>
-              <div className={classes.formTitle}>価格</div>
-              <ActionInput
-                value={price}
-                action={(e) => setPrice(e)}
-                placeholder='このフィールドにサービス価格情報を入力してください'
-              />
-            </div>
-            <div className={classes.form}>
-              <div className={classes.formTitle}>説明</div>
-              <ActionInput
-                value={description}
-                action={(e) => setDescription(e)}
-                placeholder='このフィールドにサービスの説明を入力してください'
+              <ActionSelect
+                items={CategoryList}
+                select={(e) => handleCategory(e)}
+                placeholder='正しい会社名を選択してください'
               />
             </div>
           </div>

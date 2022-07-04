@@ -12,6 +12,7 @@ import { ClientList } from "pages/ClientList/ClientList";
 import { CMS } from "pages/CMS/CMS";
 import { Login } from "pages/Login/Login";
 import { Register } from "pages/Register/Register";
+import { CompanyList } from "pages/CompanyList/CompanyList";
 
 export default function Layout() {
   const classes = LayoutStyles();
@@ -27,7 +28,7 @@ export default function Layout() {
           <Route path='/account' element={<Account />} />
           <Route path='/account/setting' element={<AccountSetting />} />
           <Route path="/clientlist" element={<ClientList/>}/>
-          <Route path="/companylist" element={<ClientList/>}/>
+          <Route path="/companylist" element={<CompanyList/>}/>
           <Route path="/cms" element={<CMS/>}/>
           <Route path='/404' element={<ErrorRoute />} />
           <Route path='/thankyou' element={<ThankYou />} />

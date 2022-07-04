@@ -26,6 +26,10 @@ export const SidbarData = [
   },
 ];
 
+export const CompanyNameList: any = ["win-win", "wax"];
+
+export const CategoryList: any = ["Full Stack", "Front end", "Back end"];
+
 export const clientListArray: any = [
   {
     name: "asdfas",

@@ -13,22 +13,22 @@ export const Account = () => {
     <div className={classes.root}>
       <div className={classes.container}>
         <div className={classes.accountTitle}>アカウント情報</div>
-        <div className={classes.accountForm}>
+        {/* <div className={classes.accountForm}>
           <div className={classes.formTitle}>氏名</div>
           <div className={classes.formValue}>しさく くらら</div>
-        </div>
+        </div> */}
         <div className={classes.accountForm}>
           <div className={classes.formTitle}>会社名</div>
           <div className={classes.formValue}>合同会社施策ぱっと</div>
         </div>
-        <div className={classes.accountForm}>
+        {/* <div className={classes.accountForm}>
           <div className={classes.formTitle}>電話番号</div>
           <div className={classes.formValue}>0X0-1234-5678</div>
-        </div>
-        <div className={classes.accountForm}>
+        </div> */}
+        {/* <div className={classes.accountForm}>
           <div className={classes.formTitle}>会社用メールアドレス</div>
           <div className={classes.formValue}>example@shisaku-pad.co.jp</div>
-        </div>
+        </div> */}
         <div className={classes.accountForm}>
           <div className={classes.formTitle}>個人用メールアドレス</div>
           <div className={classes.formValue}>example@gmail.com</div>

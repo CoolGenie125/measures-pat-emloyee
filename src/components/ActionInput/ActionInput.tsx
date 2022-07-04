@@ -26,7 +26,7 @@ export default function ActionInput({
       className={clsx(classes.root, className)}
       value={value}
       placeholder={placeholder}
-      onChange={(e) => action(e.target.value)}
+      onChange={(e) => action(e)}
     />
   );
 }

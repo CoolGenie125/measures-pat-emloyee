@@ -79,9 +79,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   form: {
-    display: "flex",
-    alignItems: "center",
     marginBottom: "10px",
+    textAlign: "left",
   },
   formTitle: {
     minWidth: "100px",
@@ -91,7 +90,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 400,
     fontSize: "18px",
     lineHeight: "29px",
-    textAlign: "center",
+    marginBottom: "10px",
   },
   formInput: {
     color: "#000",
@@ -101,14 +100,34 @@ export const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: "29px",
     textAlign: "center",
   },
-  imgLoaderRoot: {
+  logoImgLoaderRoot: {
     width: "100%",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "left",
     alignItems: "center",
     marginBottom: "50px",
   },
-  imgLoader: {
+  logoImgLoader: {
+    width: "50%",
+    border: "1px dashed #dddddd",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    [theme.breakpoints.down(540)]: {
+      width: "100%",
+      transitionDelay: "300ms",
+      transitionDuration: "1000ms",
+    },
+  },
+  mainImgLoaderRoot: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "left",
+    alignItems: "center",
+    marginBottom: "50px",
+  },
+  mainImgLoader: {
     width: "50%",
     border: "1px dashed #dddddd",
     display: "flex",
@@ -138,8 +157,16 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 400,
     margin: "10px",
   },
-  importImg: {
+  importLogoImg: {
     width: "100%",
     height: "100%",
+  },
+  importMainImg: {
+    width: "100%",
+    height: "100%",
+  },
+  quillWrap: {
+    border: "1px solid #dddddd",
+    minHeight: "250px",
   },
 }));

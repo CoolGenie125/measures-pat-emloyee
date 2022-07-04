@@ -15,7 +15,7 @@ export const tableHeader = [
   "アクション",
 ];
 
-export const ClientList = () => {
+export const CompanyList = () => {
   const classes = useStyles();
   const navigate = useNavigate();
 
