@@ -24,7 +24,7 @@ export default function Layout() {
       <div className={classes.container}>
         <Header mobileAction={()=>setStatus(true)} />
         <Routes>
-          <Route path='/' element={<Account />} />
+          <Route path='/' element={<Login />} />
           <Route path='/account' element={<Account />} />
           <Route path='/account/setting' element={<AccountSetting />} />
           <Route path="/clientlist" element={<ClientList/>}/>
