@@ -1,5 +1,5 @@
 import ActionTable from "components/Table/ActionTable";
-import { clientListArray } from "config/constant";
+import { companyListArray } from "config/constant";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TableContent from "./CompanyListContent/TableContent";
@@ -7,7 +7,7 @@ import { useStyles } from "./CompanyListStyles";
 
 export const tableHeader = [
   "No",
-  "名前",
+  "管理者名",
   "会社名",
   "会社のメール",
   "個人的なメール",
@@ -35,20 +35,20 @@ export const CompanyList = () => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <div className={classes.clientListTitle}>掲載元企業一覧</div>
-        <div className={classes.clientListSmallTitle}>
-          サービスを受け入れる会社のリストです。
+        <div className={classes.companyListTitle}>利用企業一覧</div>
+        <div className={classes.companyListSmallTitle}>
+          サービスを受け入れるクライアントのリストです。
         </div>
         <ActionTable
           className={classes.tableRoot}
           handlePgNum={handlePgNum}
           handlePgRows={handlePgRows}
-          totalCnt={clientListArray?.length}
+          totalCnt={companyListArray?.length}
           PgNum={currentPage}
           PgRows={perPage}
           tableContent={
             <TableContent
-              rows={clientListArray}
+              rows={companyListArray}
               pageNumber={currentPage}
               perPageNumber={perPage}
               columns={tableHeader}

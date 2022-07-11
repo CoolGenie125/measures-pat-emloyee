@@ -1,9 +1,9 @@
 import ActionTable from "components/Table/ActionTable";
-import { clientListArray } from "config/constant";
+import { publisherListArray } from "config/constant";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TableContent from "./ClientListContent/TableContent";
-import { ClientListStyles } from "./ClientListStyles";
+import TableContent from "./PublisherListContent/TableContent";
+import { useStyles } from "./PublisherListStyles";
 
 export const tableHeader = [
   "No",
@@ -15,8 +15,8 @@ export const tableHeader = [
   "アクション",
 ];
 
-export const ClientList = () => {
-  const classes = ClientListStyles();
+export const PublisherList = () => {
+  const classes = useStyles();
   const navigate = useNavigate();
 
   //-----------pagination function------------------------
@@ -35,20 +35,20 @@ export const ClientList = () => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <div className={classes.clientListTitle}>利用企業一覧</div>
-        <div className={classes.clientListSmallTitle}>
-          サービスを受け入れるクライアントのリストです。
+        <div className={classes.publisherListTitle}>掲載元企業一覧</div>
+        <div className={classes.publisherListSmallTitle}>
+          サービスを受け入れる会社のリストです。
         </div>
         <ActionTable
           className={classes.tableRoot}
           handlePgNum={handlePgNum}
           handlePgRows={handlePgRows}
-          totalCnt={clientListArray?.length}
+          totalCnt={publisherListArray?.length}
           PgNum={currentPage}
           PgRows={perPage}
           tableContent={
             <TableContent
-              rows={clientListArray}
+              rows={publisherListArray}
               pageNumber={currentPage}
               perPageNumber={perPage}
               columns={tableHeader}

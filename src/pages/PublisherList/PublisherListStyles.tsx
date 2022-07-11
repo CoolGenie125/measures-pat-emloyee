@@ -1,6 +1,6 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
-export const ClientListStyles = makeStyles((theme: Theme) =>
+export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: "#f4dcc0",
@@ -39,7 +39,7 @@ export const ClientListStyles = makeStyles((theme: Theme) =>
         transitionDuration: "1000ms",
       },
     },
-    clientListTitle: {
+    publisherListTitle: {
       marginTop: "50px",
       color: "#F29D43",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
@@ -62,7 +62,7 @@ export const ClientListStyles = makeStyles((theme: Theme) =>
         transitionDuration: "1000ms",
       },
     },
-    clientListSmallTitle: {
+    publisherListSmallTitle: {
       color: "#000",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "16px",

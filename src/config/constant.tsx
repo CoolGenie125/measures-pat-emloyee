@@ -17,7 +17,7 @@ export const SidbarData = [
   {
     img: sidebar3,
     content: "掲載元企業一覧",
-    link: "/clientlist",
+    link: "/publisherlist",
   },
   {
     img: sidebar4,
@@ -30,7 +30,94 @@ export const CompanyNameList: any = ["win-win", "wax"];
 
 export const CategoryList: any = ["Full Stack", "Front end", "Back end"];
 
-export const clientListArray: any = [
+export const companyListArray: any = [
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfasasdfasdfasd",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfasasdf",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfasdd",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+  {
+    name: "asdfas",
+    company: "asdfasdf",
+    companyemail: "company.name@gmail.com",
+    personalemail: "geniesake@gmail.com",
+    phone: "000-0000-000",
+  },
+];
+
+export const publisherListArray: any = [
   {
     name: "asdfas",
     company: "asdfasdf",

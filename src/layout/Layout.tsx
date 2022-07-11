@@ -8,11 +8,11 @@ import { useState } from "react";
 import { AccountSetting } from "pages/Account/Setting/AccountSetting";
 import { ThankYou } from "pages/ThankYou/ThankYou";
 import { ErrorRoute } from "pages/ErrorRoute/ErrorRoute";
-import { ClientList } from "pages/ClientList/ClientList";
 import { CMS } from "pages/CMS/CMS";
 import { Login } from "pages/Login/Login";
 import { Register } from "pages/Register/Register";
 import { CompanyList } from "pages/CompanyList/CompanyList";
+import { PublisherList } from "pages/PublisherList/PublisherList";
 
 export default function Layout() {
   const classes = LayoutStyles();
@@ -27,8 +27,8 @@ export default function Layout() {
           <Route path='/' element={<Login />} />
           <Route path='/account' element={<Account />} />
           <Route path='/account/setting' element={<AccountSetting />} />
-          <Route path="/clientlist" element={<ClientList/>}/>
           <Route path="/companylist" element={<CompanyList/>}/>
+          <Route path="/publisherlist" element={<PublisherList/>}/>
           <Route path="/cms" element={<CMS/>}/>
           <Route path='/404' element={<ErrorRoute />} />
           <Route path='/thankyou' element={<ThankYou />} />
