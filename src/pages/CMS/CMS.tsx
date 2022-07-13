@@ -13,10 +13,12 @@ import { useStyles } from "./CMSStyles";
 import AddLargeCategoryModal from "./Components/AddLargeCategoryModal/AddLargeCategoryModal";
 import AddSmallCategoryModal from "./Components/AddSmallCategoryModal/AddSmallCategoryModal";
 import ActionDropDown from "components/ActionDropDown/ActionDropDown";
+import ActionInput from "components/ActionInput/ActionInput";
 
 export const CMS = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
   const [category, setCategory] = useState<string>(categoryList[0]);
   const [largeCategory, setLargeCategory] = useState<string>(
     largeCategoryList[0]
@@ -52,7 +54,13 @@ export const CMS = () => {
     console.log("add small category : ", e);
   };
 
-  const tableHeader = ["No", "カテゴリー", "価格情報", "説明", "アクション"];
+  const tableHeader = [
+    "No",
+    "カテゴリー",
+    "価格情報",
+    "説明",
+    "有効化・無効化を",
+  ];
 
   //--------------add item modal function---------------------------
   const [addStatus, setAddStatus] = useState(false);
@@ -125,22 +133,38 @@ export const CMS = () => {
             <div className={classes.category}>{smallCategory}</div>
           </ActionDropDown>
         </div>
-        <ActionTable
-          className={classes.tableRoot}
-          handlePgNum={handlePgNum}
-          handlePgRows={handlePgRows}
-          totalCnt={cmsListArray?.length}
-          PgNum={currentPage}
-          PgRows={perPage}
-          tableContent={
-            <TableContent
-              rows={cmsListArray}
-              pageNumber={currentPage}
-              perPageNumber={perPage}
-              columns={tableHeader}
-            />
-          }
-        />
+        <div className={classes.tableContainer}>
+          <div className={classes.serachContainer}>
+            <div className={classes.searchRoot}>
+              <span className={classes.searchTitle}>探す:</span>
+              <ActionInput
+                className={classes.searchInput}
+                value={search}
+                placeholder='xxx-xxx'
+                action={(e) => setSearch(e.target.value)}
+              />
+              <div className={classes.searchBtn}>
+                <i className='fas fa-search'></i>
+              </div>
+            </div>
+          </div>
+          <ActionTable
+            className={classes.tableRoot}
+            handlePgNum={handlePgNum}
+            handlePgRows={handlePgRows}
+            totalCnt={cmsListArray?.length}
+            PgNum={currentPage}
+            PgRows={perPage}
+            tableContent={
+              <TableContent
+                rows={cmsListArray}
+                pageNumber={currentPage}
+                perPageNumber={perPage}
+                columns={tableHeader}
+              />
+            }
+          />
+        </div>
         <AddServiceModal
           show={addStatus}
           onClose={() => setAddStatus(false)}

@@ -22,8 +22,7 @@ export const ActionButtonStyles = makeStyles((theme: Theme) =>
         color: "#fff",
       },
       "&:hover": {
-        boxShadow: "0px 0px 0px rgb(0 0 0 / 20%)",
-        transform: "translate(10px, 10px)",
+        opacity: 0.8,
       },
       [theme.breakpoints.down(540)]: {
         padding: "12px 24px",
@@ -58,8 +57,7 @@ export const ActionButtonStyles = makeStyles((theme: Theme) =>
         color: "#000",
       },
       "&:hover": {
-        boxShadow: "0px 0px 0px rgb(0 0 0 / 20%)",
-        transform: "translate(10px, 10px)",
+        opacity: 0.8,
       },
       [theme.breakpoints.down(540)]: {
         padding: "12px 24px",

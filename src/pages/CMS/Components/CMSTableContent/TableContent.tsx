@@ -4,6 +4,7 @@ import clsx from "clsx";
 import TableRoot from "components/Table/TableBase/TableRoot";
 import { useState } from "react";
 import ConfirmModal from "components/ConfirmModal/ConfirmModal";
+import ActionSwitch from "components/ActionSwitch/ActionSwitch";
 
 interface TableContentProps {
   columns?: any;
@@ -30,6 +31,13 @@ const TableContent = ({
     setDeleteModalStatus(true);
   };
 
+  //------------switch test function------------
+  const [switchStatus, setSwitchStatus] = useState(false);
+
+  const handleTestSwitch = () => {
+    setSwitchStatus(!switchStatus);
+  };
+
   const tableRows =
     rows !== undefined ? (
       rows
@@ -47,6 +55,11 @@ const TableContent = ({
             </TableCell>
             <TableCell className={clsx(classes.tableCell)}>
               {row.description}
+            </TableCell>
+            <TableCell className={clsx(classes.tableCell)}>
+              <div className={classes.action}>
+                <ActionSwitch status={switchStatus} action={handleTestSwitch} />
+              </div>
             </TableCell>
             <TableCell className={clsx(classes.tableCell)}>
               <div className={classes.action}>

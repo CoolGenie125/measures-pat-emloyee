@@ -79,7 +79,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       border: "1px solid #eeeeee",
       borderRadius: "4px",
       cursor: "pointer",
-      height: "80px",
+      height: "50px",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -90,7 +90,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       },
       [theme.breakpoints.down(440)]: {
         width: "100%",
-        margin: "0 10px",
+        margin: "10px 0",
       },
     },
     addCategory: {
@@ -98,6 +98,52 @@ export const useStyles = makeStyles((theme: Theme) =>
       "& i": {
         color: "#fff",
       },
+    },
+    serachContainer: {
+      display: "flex",
+      justifyContent: "right",
+    },
+    searchRoot: {
+      display: "flex",
+      alignItems: "center",
+      marginBottom: "20px",
+      justifyContent: "right",
+      width: "fit-content",
+      border: "1px solid #eee",
+      borderRadius: "4px",
+    },
+    searchTitle: {
+      color: "#000",
+      fontFamily: "ヒラギノ角ゴ W6 JIS2004",
+      fontSize: "18px",
+      fontWeight: 600,
+      height: "auto",
+      lineHeight: 1.4,
+      margin: "0 10px",
+      minWidth: "50px",
+    },
+    searchInput: {
+      border: "none",
+    },
+    searchBtn: {
+      minWidth: "50px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "#f5b673",
+      height: "51px",
+      borderBottomRightRadius: "4px",
+      borderTopRightRadius: "4px",
+      cursor: "pointer",
+      "& i": {
+        color: "#fff",
+      },
+      "&:hover": {
+        opacity: 0.8,
+      },
+    },
+    tableContainer: {
+      margin: "50px 0",
     },
     tableRoot: {},
     tableTool: {
