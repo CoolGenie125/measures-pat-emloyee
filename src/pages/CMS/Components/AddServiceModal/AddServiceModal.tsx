@@ -225,12 +225,12 @@ export default function AddServiceModal({
                 placeholder='正しいサービスの概要を入力してください'
               />
             </div>
-            <div className={classes.form}>
+            {/* <div className={classes.form}>
               <div className={classes.formTitle}>自由編集</div>
               <div className={classes.quillWrap}>
                 <ActionQuill action={(e) => handleQuill(e)} />
               </div>
-            </div>
+            </div> */}
             <div className={classes.form}>
               <div className={classes.formTitle}>カテゴリー</div>
               <ActionSelect

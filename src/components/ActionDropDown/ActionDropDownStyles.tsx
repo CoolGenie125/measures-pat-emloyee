@@ -4,6 +4,7 @@ export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       position: "relative",
+      width: "100%",
     },
     dropDownRoot: {
       position: "absolute",

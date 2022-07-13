@@ -261,3 +261,29 @@ export const cmsListArray: any = [
     description: "Full-scale homepage/xxx-xxx-xxxxx-xxx",
   },
 ];
+
+//----------------middle-category----------------------
+export const categoryList: Array<string> = [
+  "会社向けサービス",
+  "個人向けサービス",
+];
+
+export const largeCategoryList: Array<string> = [
+  "ITツール利用",
+  "システム開発",
+  "WEB制作",
+  "資料作成",
+  "士業業務代行",
+  "健康診断",
+  "その他",
+];
+
+export const smallCategoryList: Array<string> = [
+  "ITツール利用",
+  "システム開発",
+  "WEB制作",
+  "資料作成",
+  "士業業務代行",
+  "健康診断",
+  "その他",
+];

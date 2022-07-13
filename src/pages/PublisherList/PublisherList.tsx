@@ -7,7 +7,7 @@ import { useStyles } from "./PublisherListStyles";
 
 export const tableHeader = [
   "No",
-  "名前",
+  "管理者名",
   "会社名",
   "会社のメール",
   "個人的なメール",

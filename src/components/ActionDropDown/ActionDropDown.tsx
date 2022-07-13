@@ -1,14 +1,21 @@
+import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import { useStyles } from "./ActionDropDownStyles";
 
 interface ActionDropDownProps {
   children: React.ReactNode;
+  createCategory?: React.ReactNode;
   inputData: any;
+  action: (e: any) => void;
+  className?: any;
 }
 
 export default function ActionDropDown({
   children,
   inputData,
+  action,
+  className,
+  createCategory,
 }: ActionDropDownProps) {
   const classes = useStyles();
   const [show, setShow] = useState(false);
@@ -39,12 +46,13 @@ export default function ActionDropDown({
   }, [dropdownRef, show]);
 
   const handleSelect = (e: any) => {
+    action(e);
     setSelect(e);
     setShow(false);
   };
 
   return (
-    <div className={classes.root} ref={rootRef}>
+    <div className={clsx(classes.root, className)} ref={rootRef}>
       <div className={classes.children} onClick={() => setShow(true)}>
         {children}
       </div>
@@ -56,8 +64,8 @@ export default function ActionDropDown({
                 position: "absolute",
                 top: top,
                 right: 0,
-                minWidth: "150px",
-                background: "#1A1F37",
+                minWidth: "200px",
+                background: "#dbb694",
                 borderRadius: "15px",
                 zIndex: 10,
                 padding: "10px 0",
@@ -80,6 +88,7 @@ export default function ActionDropDown({
             </div>
           );
         })}
+        {createCategory}
       </div>
     </div>
   );
