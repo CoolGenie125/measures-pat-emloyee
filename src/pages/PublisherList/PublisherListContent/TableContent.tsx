@@ -10,6 +10,7 @@ interface StagingTableProps {
   rows: any;
   pageNumber: number;
   perPageNumber: number;
+  headerSort: (e: any) => void;
 }
 
 const TableContent = ({
@@ -17,6 +18,7 @@ const TableContent = ({
   perPageNumber,
   columns,
   rows,
+  headerSort,
 }: StagingTableProps) => {
   const classes = useStyles();
 
@@ -73,7 +75,11 @@ const TableContent = ({
       {rows?.length === 0 || rows === null ? (
         <div className={classes.emptyTable}>データなし</div>
       ) : (
-        <TableRoot columns={columns} rows={tableRows} />
+        <TableRoot
+          columns={columns}
+          rows={tableRows}
+          headerClick={(e) => headerSort(e)}
+        />
       )}
       <ConfirmModal
         title='ユーザーアカウントを削除する'

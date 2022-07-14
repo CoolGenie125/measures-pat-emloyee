@@ -1,3 +1,5 @@
+/** @format */
+
 import ActionTable from "components/Table/ActionTable";
 import {
   categoryList,
@@ -26,6 +28,7 @@ export const CMS = () => {
   const [smallCategory, setSmallCategory] = useState<string>(
     smallCategoryList[0]
   );
+  const [sortHeader, setSortHeader] = useState("");
 
   //-------------category add modal function---------------
   const [smallModal, setSmallModal] = useState(false);
@@ -92,6 +95,12 @@ export const CMS = () => {
 
   const handleSmallCategory = (e: any) => {
     setSmallCategory(e);
+  };
+
+  //-------------header sort function----------
+  const handleHeader = (e: any) => {
+    console.log("clicked header column:", e);
+    setSortHeader(e);
   };
 
   return (
@@ -161,6 +170,7 @@ export const CMS = () => {
                 pageNumber={currentPage}
                 perPageNumber={perPage}
                 columns={tableHeader}
+                headerSort={(e) => handleHeader(e)}
               />
             }
           />

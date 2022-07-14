@@ -1,3 +1,5 @@
+/** @format */
+
 import { useStyles } from "./TableContentStyles";
 import { TableRow, TableCell } from "@material-ui/core";
 import clsx from "clsx";
@@ -11,6 +13,7 @@ interface TableContentProps {
   rows: any;
   pageNumber: number;
   perPageNumber: number;
+  headerSort: (e: any) => void;
 }
 
 const TableContent = ({
@@ -18,10 +21,12 @@ const TableContent = ({
   perPageNumber,
   columns,
   rows,
+  headerSort,
 }: TableContentProps) => {
   const classes = useStyles();
 
   const [deleteModalStatus, setDeleteModalStatus] = useState(false);
+  const [switchConfirm, setSwitchConfirm] = useState(false);
 
   const handleConfirmModalClose = () => {
     setDeleteModalStatus(false);
@@ -35,7 +40,16 @@ const TableContent = ({
   const [switchStatus, setSwitchStatus] = useState(false);
 
   const handleTestSwitch = () => {
+    setSwitchConfirm(true);
+  };
+
+  const handleSwitchConfirmClose = () => {
+    setSwitchConfirm(false);
+  };
+
+  const handleSwitchConfirm = () => {
     setSwitchStatus(!switchStatus);
+    setSwitchConfirm(false);
   };
 
   const tableRows =
@@ -80,7 +94,11 @@ const TableContent = ({
       {rows?.length === 0 || rows === null ? (
         <div className={classes.emptyTable}>データなし</div>
       ) : (
-        <TableRoot columns={columns} rows={tableRows} />
+        <TableRoot
+          columns={columns}
+          rows={tableRows}
+          headerClick={(e) => headerSort(e)}
+        />
       )}
       <ConfirmModal
         title='ユーザーアカウントを削除する'
@@ -88,6 +106,15 @@ const TableContent = ({
         show={deleteModalStatus}
         onClose={handleConfirmModalClose}
         action={() => {}}
+      />
+      <ConfirmModal
+        title='有効化・無効化を'
+        description={`〇〇（名前、会社名、サービス名など）${
+          switchStatus ? "有効化" : "を無効化"
+        }しますか？`}
+        show={switchConfirm}
+        onClose={handleSwitchConfirmClose}
+        action={handleSwitchConfirm}
       />
     </>
   );

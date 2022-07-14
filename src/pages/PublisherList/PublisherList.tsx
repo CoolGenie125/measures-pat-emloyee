@@ -22,6 +22,7 @@ export const PublisherList = () => {
   //-----------pagination function------------------------
   const [currentPage, setCurrentPage] = useState(0);
   const [perPage, setPerPage] = useState(5);
+  const [sortHeader, setSortHeader] = useState("");
 
   const handlePgNum = (pgNum: number) => {
     setCurrentPage(pgNum);
@@ -30,6 +31,11 @@ export const PublisherList = () => {
   const handlePgRows = (rows: number) => {
     setPerPage(rows);
     setCurrentPage(0);
+  };
+
+  const handleHeader = (e: any) => {
+    console.log("clicked header column: ", e);
+    setSortHeader(e);
   };
 
   return (
@@ -52,6 +58,7 @@ export const PublisherList = () => {
               pageNumber={currentPage}
               perPageNumber={perPage}
               columns={tableHeader}
+              headerSort={(e) => handleHeader(e)}
             />
           }
         />

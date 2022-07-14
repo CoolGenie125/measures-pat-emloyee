@@ -22,6 +22,11 @@ export const CompanyList = () => {
   //-----------pagination function------------------------
   const [currentPage, setCurrentPage] = useState(0);
   const [perPage, setPerPage] = useState(5);
+  const [sortHeader, setSortHeader] = useState("");
+  const handleHeader = (e: any) => {
+    console.log("clicked header clumn: ", e);
+    setSortHeader(e);
+  };
 
   const handlePgNum = (pgNum: number) => {
     setCurrentPage(pgNum);
@@ -52,6 +57,7 @@ export const CompanyList = () => {
               pageNumber={currentPage}
               perPageNumber={perPage}
               columns={tableHeader}
+              headerSort={(e) => handleHeader(e)}
             />
           }
         />

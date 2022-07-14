@@ -16,6 +16,7 @@ interface StyledTableleProps {
   rows?: any;
   parcelRows?: any;
   estateRows?: any;
+  headerClick: (e: any) => void;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -73,11 +74,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-function TableRoot({ columns, rows }: StyledTableleProps) {
+function TableRoot({ columns, rows, headerClick }: StyledTableleProps) {
   const classes = useStyles();
 
   const tableColumns = columns?.map((column: any, key: any) => (
     <TableCell
+      onClick={(e) => headerClick(column)}
       key={column}
       className={clsx(classes.tableHeaderCell, {
         [classes.center]: column === "Status",
