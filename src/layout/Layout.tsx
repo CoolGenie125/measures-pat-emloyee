@@ -13,6 +13,8 @@ import { Login } from "pages/Login/Login";
 import { Register } from "pages/Register/Register";
 import { CompanyList } from "pages/CompanyList/CompanyList";
 import { PublisherList } from "pages/PublisherList/PublisherList";
+import { Usage } from "pages/Usage/Usage";
+import { UsageAdd } from "pages/Usage/UsageAdd/UsageAdd";
 
 export default function Layout() {
   const classes = LayoutStyles();
@@ -34,6 +36,8 @@ export default function Layout() {
           <Route path='/thankyou' element={<ThankYou />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path="/usage" element={<Usage/>}/>
+          <Route path='/usage/add' element={<UsageAdd />} />
         </Routes>
       </div>
       <Footer />

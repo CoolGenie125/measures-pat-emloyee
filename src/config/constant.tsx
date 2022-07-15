@@ -24,6 +24,11 @@ export const SidbarData = [
     content: "サービス一覧",
     link: "/cms",
   },
+  {
+    img: sidebar4,
+    content: "利用方法",
+    link: "/usage",
+  },
 ];
 
 export const CompanyNameList: any = ["win-win", "wax"];

@@ -13,7 +13,7 @@ export const tableHeader = [
   "会社のメール",
   "個人的なメール",
   "電話",
-  "アクション",
+  "無効化を/有効化",
 ];
 
 export const CompanyList = () => {
