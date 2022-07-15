@@ -1,3 +1,4 @@
+import ActionInput from "components/ActionInput/ActionInput";
 import ActionTable from "components/Table/ActionTable";
 import { companyListArray } from "config/constant";
 import { useState } from "react";
@@ -22,6 +23,7 @@ export const CompanyList = () => {
   //-----------pagination function------------------------
   const [currentPage, setCurrentPage] = useState(0);
   const [perPage, setPerPage] = useState(5);
+  const [search, setSearch] = useState("");
   const [sortHeader, setSortHeader] = useState("");
   const handleHeader = (e: any) => {
     console.log("clicked header clumn: ", e);
@@ -43,6 +45,20 @@ export const CompanyList = () => {
         <div className={classes.companyListTitle}>利用企業一覧</div>
         <div className={classes.companyListSmallTitle}>
           サービスを受け入れるクライアントのリストです。
+        </div>
+        <div className={classes.serachContainer}>
+          <div className={classes.searchRoot}>
+            <span className={classes.searchTitle}>探す:</span>
+            <ActionInput
+              className={classes.searchInput}
+              value={search}
+              placeholder='xxx-xxx'
+              action={(e) => setSearch(e.target.value)}
+            />
+            <div className={classes.searchBtn}>
+              <i className='fas fa-search'></i>
+            </div>
+          </div>
         </div>
         <ActionTable
           className={classes.tableRoot}

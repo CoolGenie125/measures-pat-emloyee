@@ -26,7 +26,6 @@ const TableContent = ({
   const classes = useStyles();
 
   const [deleteModalStatus, setDeleteModalStatus] = useState(false);
-  const [switchConfirm, setSwitchConfirm] = useState(false);
 
   const handleConfirmModalClose = () => {
     setDeleteModalStatus(false);
@@ -37,6 +36,7 @@ const TableContent = ({
   };
 
   //------------switch test function------------
+  const [switchConfirm, setSwitchConfirm] = useState(false);
   const [switchStatus, setSwitchStatus] = useState(false);
 
   const handleTestSwitch = () => {

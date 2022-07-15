@@ -1,3 +1,4 @@
+import ActionInput from "components/ActionInput/ActionInput";
 import ActionTable from "components/Table/ActionTable";
 import { publisherListArray } from "config/constant";
 import { useState } from "react";
@@ -18,6 +19,7 @@ export const tableHeader = [
 export const PublisherList = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
 
   //-----------pagination function------------------------
   const [currentPage, setCurrentPage] = useState(0);
@@ -44,6 +46,20 @@ export const PublisherList = () => {
         <div className={classes.publisherListTitle}>掲載元企業一覧</div>
         <div className={classes.publisherListSmallTitle}>
           サービスを受け入れる会社のリストです。
+        </div>
+        <div className={classes.serachContainer}>
+          <div className={classes.searchRoot}>
+            <span className={classes.searchTitle}>探す:</span>
+            <ActionInput
+              className={classes.searchInput}
+              value={search}
+              placeholder='xxx-xxx'
+              action={(e) => setSearch(e.target.value)}
+            />
+            <div className={classes.searchBtn}>
+              <i className='fas fa-search'></i>
+            </div>
+          </div>
         </div>
         <ActionTable
           className={classes.tableRoot}
