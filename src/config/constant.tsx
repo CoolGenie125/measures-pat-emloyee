@@ -1,3 +1,5 @@
+/** @format */
+
 import sidebar1 from "../assets/icons/sidebar-icon1.png";
 import sidebar2 from "../assets/icons/sidebar-icon2.png";
 import sidebar3 from "../assets/icons/sidebar-icon3.png";
@@ -267,28 +269,16 @@ export const cmsListArray: any = [
   },
 ];
 
-//----------------middle-category----------------------
-export const categoryList: Array<string> = [
-  "会社向けサービス",
-  "個人向けサービス",
-];
+export const ApiUrl = "http://192.168.112.121:8080";
+export const REQUEST_API_URL = `${ApiUrl}/api`;
 
-export const largeCategoryList: Array<string> = [
-  "ITツール利用",
-  "システム開発",
-  "WEB制作",
-  "資料作成",
-  "士業業務代行",
-  "健康診断",
-  "その他",
-];
-
-export const smallCategoryList: Array<string> = [
-  "ITツール利用",
-  "システム開発",
-  "WEB制作",
-  "資料作成",
-  "士業業務代行",
-  "健康診断",
-  "その他",
-];
+export const firstCategoryList = {
+  company: {
+    name: "会社向けサービス",
+    id: 1,
+  },
+  person: {
+    name: "個人向けサービス",
+    id: 2,
+  },
+};

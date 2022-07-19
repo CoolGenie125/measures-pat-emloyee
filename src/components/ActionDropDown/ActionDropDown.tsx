@@ -59,7 +59,7 @@ export default function ActionDropDown({
       <div
         ref={dropdownRef}
         style={
-          show
+          show && inputData.length !== 0
             ? {
                 position: "absolute",
                 top: top,
@@ -84,7 +84,7 @@ export default function ActionDropDown({
               }
               key={key}
               onClick={(e) => handleSelect(item)}>
-              {item}
+              {item?.cat_name}
             </div>
           );
         })}

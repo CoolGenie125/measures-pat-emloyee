@@ -1,13 +1,8 @@
 /** @format */
 
 import ActionTable from "components/Table/ActionTable";
-import {
-  categoryList,
-  cmsListArray,
-  largeCategoryList,
-  smallCategoryList,
-} from "config/constant";
-import { useState } from "react";
+import { cmsListArray, firstCategoryList } from "config/constant";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AddServiceModal from "./Components/AddServiceModal/AddServiceModal";
 import TableContent from "./Components/CMSTableContent/TableContent";
@@ -16,18 +11,33 @@ import AddLargeCategoryModal from "./Components/AddLargeCategoryModal/AddLargeCa
 import AddSmallCategoryModal from "./Components/AddSmallCategoryModal/AddSmallCategoryModal";
 import ActionDropDown from "components/ActionDropDown/ActionDropDown";
 import ActionInput from "components/ActionInput/ActionInput";
+import { bigCategoryAPI, smallCategoryAPI } from "hook/category";
 
 export const CMS = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState<string>(categoryList[0]);
-  const [largeCategory, setLargeCategory] = useState<string>(
-    largeCategoryList[0]
+  const categoryList = [
+    {
+      cat1_id: firstCategoryList.company.id,
+      cat_name: firstCategoryList.company.name,
+    },
+    {
+      cat1_id: firstCategoryList.person.id,
+      cat_name: firstCategoryList.person.name,
+    },
+  ];
+  const [category, setCategory] = useState<string>(
+    firstCategoryList.company.name
   );
-  const [smallCategory, setSmallCategory] = useState<string>(
-    smallCategoryList[0]
-  );
+  const [categoryParams, setCategoryParams] = useState(1);
+  const [bigCategory, setBigCategory] = useState<string>("");
+  const [bigCategoryParams, setBigCategoryParams] = useState(1);
+  const [bigCategoryList, setBigCategoryList] = useState<any>();
+  const [smallCategory, setSmallCategory] = useState<string>("");
+  const [smallCategoryParams, setSmallCategoryParams] = useState(0);
+  const [smallCategoryList, setSmallCategoryList] = useState<any>();
+
   const [sortHeader, setSortHeader] = useState("");
 
   //-------------category add modal function---------------
@@ -50,7 +60,9 @@ export const CMS = () => {
   };
 
   const handleAddLargeCategory = (e: any) => {
-    console.log("add large category : ", e);
+    const formData = new FormData();
+    formData.append("cat1_id", categoryParams.toString());
+    formData.append("cat2_id", bigCategoryParams.toString());
   };
 
   const handleAddSmallCategory = (e: any) => {
@@ -84,17 +96,38 @@ export const CMS = () => {
     setPerPage(rows);
     setCurrentPage(0);
   };
-
-  const handleCategory = (e: any) => {
-    setCategory(e);
+  //-----------category click function----------------
+  const handleCategory = async (e: any) => {
+    setCategory(e?.cat_name);
+    setCategoryParams(e?.cat1_id);
+    const bigCategoryRes = await bigCategoryAPI(e?.cat1_id);
+    const smallCategoryRes = await smallCategoryAPI(
+      e?.cat1_id,
+      bigCategoryParams
+    );
+    setBigCategoryList(bigCategoryRes);
+    setSmallCategoryList(smallCategoryRes);
+    setBigCategory(
+      bigCategoryRes?.length === 0 ? "No data" : bigCategoryRes[0]?.cat_name
+    );
+    setSmallCategory(
+      smallCategoryRes?.length === 0 ? "No data" : smallCategoryRes[0]?.cat_name
+    );
   };
 
-  const handleLargeCategory = (e: any) => {
-    setLargeCategory(e);
+  const handleLargeCategory = async (e: any) => {
+    setBigCategory(e?.cat_name);
+    setBigCategoryParams(e?.cat2_id);
+    const smallCategoryRes = await smallCategoryAPI(categoryParams, e?.cat2_id);
+    setSmallCategoryList(smallCategoryRes);
+    setSmallCategory(
+      smallCategoryRes?.length === 0 ? "No data" : smallCategoryRes[0]?.cat_name
+    );
   };
 
   const handleSmallCategory = (e: any) => {
-    setSmallCategory(e);
+    console.log("small|_category params: ", e);
+    setSmallCategory(e?.cat_name);
   };
 
   //-------------header sort function----------
@@ -102,6 +135,22 @@ export const CMS = () => {
     console.log("clicked header column:", e);
     setSortHeader(e);
   };
+
+  const init = async () => {
+    const bigCategoryRes = await bigCategoryAPI(categoryParams);
+    const smallCategoryRes = await smallCategoryAPI(
+      categoryParams,
+      bigCategoryParams
+    );
+    setBigCategoryList(bigCategoryRes);
+    setSmallCategoryList(smallCategoryRes);
+    setBigCategory(bigCategoryRes[0]?.cat_name);
+    setSmallCategory(smallCategoryRes[0]?.cat_name);
+  };
+
+  useEffect(() => {
+    init();
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -118,7 +167,7 @@ export const CMS = () => {
             <div className={classes.category}>{category}</div>
           </ActionDropDown>
           <ActionDropDown
-            inputData={largeCategoryList}
+            inputData={bigCategoryList}
             action={handleLargeCategory}
             createCategory={
               <div
@@ -127,7 +176,7 @@ export const CMS = () => {
                 <i className='fas fa-plus'></i>
               </div>
             }>
-            <div className={classes.category}>{largeCategory}</div>
+            <div className={classes.category}>{bigCategory}</div>
           </ActionDropDown>
           <ActionDropDown
             inputData={smallCategoryList}

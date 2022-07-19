@@ -1,3 +1,5 @@
+/** @format */
+
 import { useStyles } from "./AddServiceModalStyle";
 import { useState, useEffect, useRef } from "react";
 import ActionButton from "components/ActionButton/ActionButton";
@@ -60,13 +62,14 @@ export default function AddServiceModal({
   //---main image import function----------------
 
   const MainInputFile = useRef<HTMLInputElement>(null);
-  const [importMainImg, setImportMainImg] = useState<any>();
+  const [importMainImg, setImportMainImg] = useState<FileList>();
 
   const onMainImgImport = ({
     currentTarget: { files, name },
   }: React.ChangeEvent<HTMLInputElement>) => {
-    if (files && files.length && name === "importMainImg")
-      setImportMainImg(files[0]);
+    if (files && files.length && name === "importMainImg") {
+      setImportMainImg(files);
+    }
   };
 
   const handleMainFileInput = () => {
@@ -102,7 +105,7 @@ export default function AddServiceModal({
       company_logo: URL.createObjectURL(importLogoImg),
       company_name: companyName,
       service_title: serviceName,
-      main_img: URL.createObjectURL(importMainImg),
+      // main_img: URL.createObjectURL(importMainImg),
       service_overview: serviceOverview,
       free_editor: freeEditor,
       category: category,
@@ -203,13 +206,19 @@ export default function AddServiceModal({
                   style={{ display: "none" }}
                   ref={MainInputFile}
                   onChange={onMainImgImport}
+                  multiple
                 />
                 {importMainImg ? (
-                  <img
-                    src={URL.createObjectURL(importMainImg)}
-                    alt='image'
-                    className={classes.importMainImg}
-                  />
+                  Array.from(importMainImg).forEach((item: any) => {
+                    console.log("items: ", item);
+                    return (
+                      <img
+                        src={URL.createObjectURL(item)}
+                        alt='image'
+                        className={classes.importMainImg}
+                      />
+                    );
+                  })
                 ) : (
                   <div className={classes.importLetter}>
                     サービスのメイン画像を選択してください

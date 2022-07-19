@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import authReducer from "./auth/index";
 import alertReducer from "./alert/index";
+import authReducer from "./auth/index";
 
 export const store = configureStore({
   reducer: {
-    // auth: authReducer,1
+    auth: authReducer,
     alert: alertReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
