@@ -11,7 +11,17 @@ import AddLargeCategoryModal from "./Components/AddLargeCategoryModal/AddLargeCa
 import AddSmallCategoryModal from "./Components/AddSmallCategoryModal/AddSmallCategoryModal";
 import ActionDropDown from "components/ActionDropDown/ActionDropDown";
 import ActionInput from "components/ActionInput/ActionInput";
-import { bigCategoryAPI, smallCategoryAPI } from "hook/category";
+import {
+  addCategoryAPI,
+  bigCategoryAPI,
+  deleteCategoryAPI,
+  smallCategoryAPI,
+  updateCategoryAPI,
+} from "hook/category";
+import EditLargeCategoryModal from "./Components/EditLargeCategoryModal/EditLargeCategoryModal";
+import EditSmallCategoryModal from "./Components/EditSmallCategoryModal/EditSmallCategoryModal";
+import ConfirmModal from "components/ConfirmModal/ConfirmModal";
+import { CreateCategoryResponse } from "config/ResponseContant";
 
 export const CMS = () => {
   const classes = useStyles();
@@ -42,31 +52,45 @@ export const CMS = () => {
 
   //-------------category add modal function---------------
   const [smallModal, setSmallModal] = useState(false);
-  const [largeModal, setLargeModal] = useState(false);
+  const [bigModal, setBigModal] = useState(false);
 
   const handleSmallModalClose = () => {
     setSmallModal(false);
   };
 
   const handleLargeModalClose = () => {
-    setLargeModal(false);
+    setBigModal(false);
   };
 
   const handleSmallModalOpen = () => {
     setSmallModal(true);
   };
   const handleLargeModalOpen = () => {
-    setLargeModal(true);
+    setBigModal(true);
   };
 
-  const handleAddLargeCategory = (e: any) => {
-    const formData = new FormData();
-    formData.append("cat1_id", categoryParams.toString());
-    formData.append("cat2_id", bigCategoryParams.toString());
+  const handleAddLargeCategory = async (e: string) => {
+    const addBigCatRes = await addCategoryAPI({
+      cat1_id: categoryParams,
+      cat2_id: 0,
+      cat3_id: 0,
+      cat_name: e,
+    });
+    if (addBigCatRes === CreateCategoryResponse.Success) {
+      init();
+    }
   };
 
-  const handleAddSmallCategory = (e: any) => {
-    console.log("add small category : ", e);
+  const handleAddSmallCategory = async (e: any) => {
+    const addSmallCatRes = await addCategoryAPI({
+      cat1_id: categoryParams,
+      cat2_id: bigCategoryParams,
+      cat3_id: 0,
+      cat_name: e,
+    });
+    if (addSmallCatRes === CreateCategoryResponse.Success) {
+      init();
+    }
   };
 
   const tableHeader = [
@@ -77,6 +101,60 @@ export const CMS = () => {
     "無効化を/有効化",
   ];
 
+  //------category edit delete function----------------------------
+  const [smallEditModal, setSmallEditModal] = useState(false);
+  const [bigEditModal, setBigEditModal] = useState(false);
+  const [editBigInfo, setEditBigInfo] = useState<any>();
+  const [editSmallInfo, setEditSmallInfo] = useState<any>();
+
+  const handleBigCategoryEdit = async (e: any) => {
+    console.log("big category edit info: ", e);
+    setEditBigInfo(e);
+    setBigEditModal(true);
+  };
+
+  const handleEditBigModal = async (e: any) => {
+    const editBigRes = await updateCategoryAPI(editBigInfo.id, e);
+    console.log("edit result : ", editBigRes);
+    await init();
+  };
+
+  const handleSmallCategoryEdit = async (e: any) => {
+    console.log("small category edit info: ", e);
+    setSmallEditModal(true);
+    setEditSmallInfo(e);
+  };
+
+  const handleEditSmallModal = async (e: any) => {
+    const editBigRes = await updateCategoryAPI(editBigInfo, e);
+    console.log("edit result : ", editBigRes);
+    await init();
+  };
+
+  //--------------category delete function------------------------
+
+  const [catDelete, setCatDelete] = useState(false);
+  const [catDeleteName, setCatDeleteName] = useState("");
+  const [catDeleteData, setCatDeleteData] = useState<any>();
+  const handleBigCategoryTrash = (e: any) => {
+    console.log("big category delete info: ", e);
+    setCatDelete(true);
+    setCatDeleteName(e.cat_name);
+    setCatDeleteData(e);
+  };
+
+  const handleSmallCategoryTrash = (e: any) => {
+    console.log("small category delete info: ", e);
+    setCatDelete(true);
+    setCatDeleteName(e.cat_name);
+    setCatDeleteData(e);
+  };
+
+  const handleDeleteCategory = async () => {
+    const categoryDeleteRes = await deleteCategoryAPI(catDeleteData.id);
+    console.log("result of delete: ", categoryDeleteRes);
+    await init();
+  };
   //--------------add item modal function---------------------------
   const [addStatus, setAddStatus] = useState(false);
 
@@ -96,6 +174,7 @@ export const CMS = () => {
     setPerPage(rows);
     setCurrentPage(0);
   };
+
   //-----------category click function----------------
   const handleCategory = async (e: any) => {
     setCategory(e?.cat_name);
@@ -115,7 +194,7 @@ export const CMS = () => {
     );
   };
 
-  const handleLargeCategory = async (e: any) => {
+  const handleBigCategory = async (e: any) => {
     setBigCategory(e?.cat_name);
     setBigCategoryParams(e?.cat2_id);
     const smallCategoryRes = await smallCategoryAPI(categoryParams, e?.cat2_id);
@@ -163,12 +242,17 @@ export const CMS = () => {
           </div>
         </div>
         <div className={classes.categoryRoot}>
-          <ActionDropDown inputData={categoryList} action={handleCategory}>
+          <ActionDropDown
+            inputData={categoryList}
+            action={handleCategory}
+            editDisable>
             <div className={classes.category}>{category}</div>
           </ActionDropDown>
           <ActionDropDown
             inputData={bigCategoryList}
-            action={handleLargeCategory}
+            action={handleBigCategory}
+            onEdit={handleBigCategoryEdit}
+            onTrash={handleBigCategoryTrash}
             createCategory={
               <div
                 className={classes.addCategory}
@@ -181,6 +265,8 @@ export const CMS = () => {
           <ActionDropDown
             inputData={smallCategoryList}
             action={handleSmallCategory}
+            onEdit={handleSmallCategoryEdit}
+            onTrash={handleSmallCategoryTrash}
             createCategory={
               <div
                 className={classes.addCategory}
@@ -230,7 +316,7 @@ export const CMS = () => {
           action={(e) => handleAddItem(e)}
         />
         <AddLargeCategoryModal
-          show={largeModal}
+          show={bigModal}
           onClose={handleLargeModalClose}
           action={(e) => handleAddLargeCategory(e)}
         />
@@ -238,6 +324,23 @@ export const CMS = () => {
           show={smallModal}
           onClose={handleSmallModalClose}
           action={(e) => handleAddSmallCategory(e)}
+        />
+        <EditLargeCategoryModal
+          show={bigEditModal}
+          onClose={() => setBigEditModal(false)}
+          action={(e) => handleEditBigModal(e)}
+        />
+        <EditSmallCategoryModal
+          show={smallEditModal}
+          onClose={() => setSmallEditModal(false)}
+          action={(e) => handleEditSmallModal(e)}
+        />
+        <ConfirmModal
+          title='カテゴリを削除'
+          description={`本当に${catDeleteName}カテゴリを削除しますか？`}
+          show={catDelete}
+          onClose={() => setCatDelete(false)}
+          action={handleDeleteCategory}
         />
       </div>
     </div>

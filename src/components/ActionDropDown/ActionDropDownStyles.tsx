@@ -24,10 +24,13 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontSize: "14px",
       lineHeight: "40px",
       color: "#fff",
-      postion: "relative",
+      position: "relative",
       cursor: "pointer",
       "&:hover": {
         opacity: 0.5,
+      },
+      "&:hover #edit": {
+        display: "flex",
       },
     },
     activeDropDownItem: {
@@ -38,9 +41,24 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontSize: "14px",
       lineHeight: "40px",
       color: "#fff",
-      postion: "relative",
+      position: "relative",
       opacity: 0.5,
       cursor: "pointer",
+      "&:hover #edit": {
+        display: "flex",
+      },
+    },
+    editRoot:{
+      display: "none",
+      position: "absolute",
+      right: 10,
+      top: 10,
+      "& i":{
+        marginLeft: "5px",
+        fontSize: "14px",
+        color: "#000",
+        lineHeight: "14px",
+      },
     },
     displayNone: {
       display: "none",

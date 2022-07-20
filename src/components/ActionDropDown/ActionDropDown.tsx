@@ -1,3 +1,5 @@
+/** @format */
+
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import { useStyles } from "./ActionDropDownStyles";
@@ -8,6 +10,9 @@ interface ActionDropDownProps {
   inputData: any;
   action: (e: any) => void;
   className?: any;
+  editDisable?: boolean;
+  onTrash?: (e: any) => void;
+  onEdit?: (e: any) => void;
 }
 
 export default function ActionDropDown({
@@ -16,6 +21,9 @@ export default function ActionDropDown({
   action,
   className,
   createCategory,
+  editDisable,
+  onTrash,
+  onEdit,
 }: ActionDropDownProps) {
   const classes = useStyles();
   const [show, setShow] = useState(false);
@@ -51,6 +59,13 @@ export default function ActionDropDown({
     setShow(false);
   };
 
+  const handleEdit = (e: any) => {
+    onEdit !== undefined && onEdit(e);
+  };
+
+  const handleTrash = (e: any) => {
+    onTrash !== undefined && onTrash(e);
+  };
   return (
     <div className={clsx(classes.root, className)} ref={rootRef}>
       <div className={classes.children} onClick={() => setShow(true)}>
@@ -59,7 +74,7 @@ export default function ActionDropDown({
       <div
         ref={dropdownRef}
         style={
-          show && inputData.length !== 0
+          show
             ? {
                 position: "absolute",
                 top: top,
@@ -83,8 +98,20 @@ export default function ActionDropDown({
                   : classes.dropDownItem
               }
               key={key}
-              onClick={(e) => handleSelect(item)}>
+              onClick={() => handleSelect(item)}>
               {item?.cat_name}
+              {editDisable ? (
+                <></>
+              ) : (
+                <div id='edit' className={classes.editRoot}>
+                  <i
+                    className='fas fa-tools'
+                    onClick={() => handleEdit(item)}></i>
+                  <i
+                    className='fal fa-trash-alt'
+                    onClick={() => handleTrash(item)}></i>
+                </div>
+              )}
             </div>
           );
         })}
