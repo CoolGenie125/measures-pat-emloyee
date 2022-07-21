@@ -1,3 +1,5 @@
+/** @format */
+
 import ActionInput from "components/ActionInput/ActionInput";
 import ActionTable from "components/Table/ActionTable";
 import { companyListArray } from "config/constant";
@@ -14,6 +16,7 @@ export const tableHeader = [
   "個人的なメール",
   "電話",
   "無効化を/有効化",
+  "完全消去",
 ];
 
 export const CompanyList = () => {
@@ -39,6 +42,10 @@ export const CompanyList = () => {
     setCurrentPage(0);
   };
 
+  const handleAddCompany = () => {
+    navigate("/companylist/add");
+  };
+
   return (
     <div className={classes.root}>
       <div className={classes.container}>
@@ -47,6 +54,12 @@ export const CompanyList = () => {
           サービスを受け入れるクライアントのリストです。
         </div>
         <div className={classes.serachContainer}>
+          <div className={classes.addRoot}>
+            <div className={classes.addBtn} onClick={() => handleAddCompany()}>
+              追加ボタン
+              <i className='fas fa-plus'></i>
+            </div>
+          </div>
           <div className={classes.searchRoot}>
             <span className={classes.searchTitle}>探す:</span>
             <ActionInput

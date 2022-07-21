@@ -4,7 +4,6 @@ import { useStyles } from "./AddServiceModalStyle";
 import { useState, useEffect, useRef } from "react";
 import ActionButton from "components/ActionButton/ActionButton";
 import ActionInput from "components/ActionInput/ActionInput";
-import ActionQuill from "components/ActionQuill/ActionQuill";
 import ActionSelect from "components/ActionSelect/ActionSelect";
 import { CategoryList, CompanyNameList } from "config/constant";
 
@@ -82,16 +81,6 @@ export default function AddServiceModal({
 
   const handleServiceOverview = (e: any) => {
     setServiceOverview(e.target.value);
-  };
-
-  //---------free editor import function-----------
-
-  const handleQuill = (e: any) => {
-    console.log(
-      "free ediotr import value: ",
-      e.getCurrentContent().getPlainText()
-    );
-    setFreeEditor(e);
   };
 
   //-----------category import function-------------

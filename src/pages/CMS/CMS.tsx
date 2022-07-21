@@ -99,6 +99,7 @@ export const CMS = () => {
     "価格情報",
     "説明",
     "無効化を/有効化",
+    "完全消去",
   ];
 
   //------category edit delete function----------------------------

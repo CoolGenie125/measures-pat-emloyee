@@ -14,6 +14,7 @@ export const tableHeader = [
   "個人的なメール",
   "電話",
   "無効化を/有効化",
+  "完全消去",
 ];
 
 export const PublisherList = () => {

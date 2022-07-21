@@ -1,3 +1,5 @@
+/** @format */
+
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme: Theme) =>
@@ -110,16 +112,16 @@ export const useStyles = makeStyles((theme: Theme) =>
         color: "#E8E8E8",
         opacity: 1 /* Firefox */,
       },
-      "&:focus-visible":{
+      "&:focus-visible": {
         outline: "none",
       },
-      "&:focus":{
+      "&:focus": {
         outline: "none",
       },
     },
     formBtn: {
-      marginTop: "24px",
-      background: "#333333",
+      width: "100% !important",
+      margin: "0 10px",
     },
     policy: {
       display: "flex",
@@ -132,6 +134,12 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     checkbox: {
       marginRight: "10px",
+    },
+    btnRoot: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "100%",
     },
   })
 );

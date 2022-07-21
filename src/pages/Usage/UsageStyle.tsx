@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 export const UsageStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: "#F5E4E2",
+      backgroundColor: "#f4dcc0",
       padding: "48px",
       boxSizing: "border-box",
       transitionDelay: "400ms",

@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: "20px",
         "& .MuiTableRow-root": {
           borderBottom: "1px solid #eee",
+          cursor: "pointer",
+          "&:hover":{
+            background: "#eee"
+          },
         },
         "& .MuiTableBody-root .MuiTableRow-root:last-child": {
           borderBottom: "solid 1px transparent",

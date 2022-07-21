@@ -70,7 +70,9 @@ const TableContent = ({
             <TableCell className={clsx(classes.tableCell)}>
               {row.description}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => console.log("hey")}>
               <div className={classes.action}>
                 <ActionSwitch status={switchStatus} action={handleTestSwitch} />
               </div>
