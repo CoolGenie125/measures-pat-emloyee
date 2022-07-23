@@ -36,7 +36,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       },
     },
     usageAddTitle: {
-      color: "#E57461",
+      color: "#F29D43",
       fontFamily: "ヒラギノ角ゴ W6 JIS2004",
       fontSize: "28px",
       fontWeight: 600,

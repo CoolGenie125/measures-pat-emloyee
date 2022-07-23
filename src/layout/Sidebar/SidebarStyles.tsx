@@ -1,3 +1,5 @@
+/** @format */
+
 import { createStyles, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 export const SidebarStyles = makeStyles((theme: Theme) =>
@@ -30,7 +32,7 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
     },
     avatarRoot: {
       marginTop: "24px",
-      marginBottom: "72px",
+      marginBottom: "25px",
       textAlign: "center",
       cursor: "pointer",
       "&:hover": {
@@ -68,6 +70,9 @@ export const SidebarStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
       alignItems: "center",
       borderRadius: "15px",
+      "& :last-child": {
+        borderBottom: "1px solid transparent",
+      },
     },
     sidebarItem: {
       width: "100%",

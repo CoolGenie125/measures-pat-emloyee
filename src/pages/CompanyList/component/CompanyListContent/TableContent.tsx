@@ -14,6 +14,7 @@ interface StagingTableProps {
   pageNumber: number;
   perPageNumber: number;
   headerSort: (e: any) => void;
+  onRow: (e: any) => void;
 }
 
 const TableContent = ({
@@ -22,6 +23,7 @@ const TableContent = ({
   columns,
   rows,
   headerSort,
+  onRow,
 }: StagingTableProps) => {
   const classes = useStyles();
 
@@ -58,22 +60,34 @@ const TableContent = ({
         ?.slice(pageNumber * perPageNumber, (pageNumber + 1) * perPageNumber)
         .map((row: any, key: any) => (
           <TableRow key={key}>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row)}>
               {pageNumber * perPageNumber + key + 1}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row)}>
               {row.name}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row)}>
               {row.company}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row)}>
               {row.companyemail}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row)}>
               {row.personalemail}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row)}>
               {row.phone}
             </TableCell>
             <TableCell className={clsx(classes.tableCell)}>

@@ -5,7 +5,7 @@ import ActionTable from "components/Table/ActionTable";
 import { companyListArray } from "config/constant";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TableContent from "./CompanyListContent/TableContent";
+import TableContent from "./component/CompanyListContent/TableContent";
 import { useStyles } from "./CompanyListStyles";
 
 export const tableHeader = [
@@ -46,6 +46,10 @@ export const CompanyList = () => {
     navigate("/companylist/add");
   };
 
+  const handleRow = (e: any) => {
+    navigate("/companylist/detail");
+  };
+
   return (
     <div className={classes.root}>
       <div className={classes.container}>
@@ -82,6 +86,7 @@ export const CompanyList = () => {
           PgRows={perPage}
           tableContent={
             <TableContent
+              onRow={(e) => handleRow(e)}
               rows={companyListArray}
               pageNumber={currentPage}
               perPageNumber={perPage}

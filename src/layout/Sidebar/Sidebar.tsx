@@ -1,7 +1,6 @@
 import { SidebarStyles } from "./SidebarStyles";
 import LogoImg from "../../assets/images/logo.png";
 import avatar from "../../assets/images/avatar.png";
-import banner from "../../assets/images/banner.png";
 import { SidbarData } from "config/constant";
 import { useLocation, useNavigate } from "react-router-dom";
 import clsx from "clsx";

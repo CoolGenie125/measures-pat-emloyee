@@ -30,6 +30,18 @@ export const AddCompany = () => {
     navigate("/companylist");
   };
 
+  const handleTitle = (e: any) => {
+    setTitle(e.target.value);
+  };
+
+  const handleEmail = (e: any) => {
+    setEmail(e.target.value);
+  };
+
+  const handleDetail = (e: any) => {
+    setInquiry(e.target.value);
+  };
+
   return (
     <div className={classes.root}>
       <div className={classes.container}>
@@ -41,7 +53,7 @@ export const AddCompany = () => {
           <ActionInput
             value={title}
             placeholder='このフィールドに入力してください'
-            action={(e) => setTitle(e)}
+            action={(e) => handleTitle(e)}
           />
         </div>
         <div className={classes.usageAddForm}>
@@ -51,7 +63,7 @@ export const AddCompany = () => {
           <ActionInput
             value={email}
             placeholder='corp.shisaku-pad.co.jp'
-            action={(e) => setEmail(e)}
+            action={(e) => handleEmail(e)}
           />
         </div>
         <div className={classes.usageAddForm}>
@@ -62,7 +74,7 @@ export const AddCompany = () => {
             className={classes.formTextarea}
             value={inquiry}
             placeholder='このフィールドに入力してください'
-            onChange={(e) => setInquiry(e.target.value)}
+            onChange={(e) => handleDetail(e)}
           />
         </div>
         <div className={classes.btnRoot}>

@@ -4,6 +4,7 @@ import sidebar1 from "../assets/icons/sidebar-icon1.png";
 import sidebar2 from "../assets/icons/sidebar-icon2.png";
 import sidebar3 from "../assets/icons/sidebar-icon3.png";
 import sidebar4 from "../assets/icons/sidebar-icon4.png";
+import sidebar5 from "../assets/icons/sidebar-icon5.png";
 
 export const SidbarData = [
   {
@@ -27,7 +28,7 @@ export const SidbarData = [
     link: "/cms",
   },
   {
-    img: sidebar4,
+    img: sidebar5,
     content: "利用方法",
     link: "/usage",
   },
@@ -269,8 +270,9 @@ export const cmsListArray: any = [
   },
 ];
 
-export const ApiUrl = "http://192.168.112.121:8080";
+export const ApiUrl = "http://localhost:8080";
 export const REQUEST_API_URL = `${ApiUrl}/api`;
+export const REQUEST_IMG_URL = `${ApiUrl}/api/images/file_name`;
 
 export const firstCategoryList = {
   company: {

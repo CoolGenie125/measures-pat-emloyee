@@ -22,6 +22,7 @@ import EditLargeCategoryModal from "./Components/EditLargeCategoryModal/EditLarg
 import EditSmallCategoryModal from "./Components/EditSmallCategoryModal/EditSmallCategoryModal";
 import ConfirmModal from "components/ConfirmModal/ConfirmModal";
 import { CreateCategoryResponse } from "config/ResponseContant";
+import { serviceAPI } from "hook/service";
 
 export const CMS = () => {
   const classes = useStyles();
@@ -47,6 +48,7 @@ export const CMS = () => {
   const [smallCategory, setSmallCategory] = useState<string>("");
   const [smallCategoryParams, setSmallCategoryParams] = useState(0);
   const [smallCategoryList, setSmallCategoryList] = useState<any>();
+  const [service, setService] = useState<any>();
 
   const [sortHeader, setSortHeader] = useState("");
 
@@ -95,9 +97,10 @@ export const CMS = () => {
 
   const tableHeader = [
     "No",
+    "会社名",
+    "サービス名",
+    "サービスの概要",
     "カテゴリー",
-    "価格情報",
-    "説明",
     "無効化を/有効化",
     "完全消去",
   ];
@@ -216,16 +219,28 @@ export const CMS = () => {
     setSortHeader(e);
   };
 
+  //--------------service detail functin----------
+  const handleServiceDetail = (e: any) => {
+    navigate(`/cms/service/${e}`);
+  };
+
+  //---------------init function------------------
   const init = async () => {
     const bigCategoryRes = await bigCategoryAPI(categoryParams);
     const smallCategoryRes = await smallCategoryAPI(
       categoryParams,
       bigCategoryParams
     );
+    const serviceRes = await serviceAPI(2, 1, 0);
+    console.log("service result", serviceRes);
+    console.log("category_big result", bigCategoryRes);
+    console.log("category_small result", smallCategoryRes);
+
     setBigCategoryList(bigCategoryRes);
     setSmallCategoryList(smallCategoryRes);
     setBigCategory(bigCategoryRes[0]?.cat_name);
     setSmallCategory(smallCategoryRes[0]?.cat_name);
+    setService(serviceRes);
   };
 
   useEffect(() => {
@@ -244,12 +259,14 @@ export const CMS = () => {
         </div>
         <div className={classes.categoryRoot}>
           <ActionDropDown
+            className={classes.categoryItem}
             inputData={categoryList}
             action={handleCategory}
             editDisable>
             <div className={classes.category}>{category}</div>
           </ActionDropDown>
           <ActionDropDown
+            className={classes.categoryItem}
             inputData={bigCategoryList}
             action={handleBigCategory}
             onEdit={handleBigCategoryEdit}
@@ -264,6 +281,7 @@ export const CMS = () => {
             <div className={classes.category}>{bigCategory}</div>
           </ActionDropDown>
           <ActionDropDown
+            className={classes.categoryItem}
             inputData={smallCategoryList}
             action={handleSmallCategory}
             onEdit={handleSmallCategoryEdit}
@@ -302,7 +320,8 @@ export const CMS = () => {
             PgRows={perPage}
             tableContent={
               <TableContent
-                rows={cmsListArray}
+                rows={service}
+                onRow={(e) => handleServiceDetail(e)}
                 pageNumber={currentPage}
                 perPageNumber={perPage}
                 columns={tableHeader}

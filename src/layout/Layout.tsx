@@ -16,6 +16,9 @@ import { PublisherList } from "pages/PublisherList/PublisherList";
 import { Usage } from "pages/Usage/Usage";
 import { UsageAdd } from "pages/Usage/UsageAdd/UsageAdd";
 import { AddCompany } from "pages/CompanyList/AddCompany/AddCompany";
+import { CompanyDetail } from "pages/CompanyList/CompanyDetail/CompanyDetail";
+import { ServiceDetail } from "pages/CMS/ServiceDetail/ServiceDetail";
+import { ServiceEdit } from "pages/CMS/ServiceEdit/ServiceEdit";
 
 export default function Layout() {
   const classes = LayoutStyles();
@@ -32,8 +35,11 @@ export default function Layout() {
           <Route path='/account/setting' element={<AccountSetting />} />
           <Route path="/companylist" element={<CompanyList/>}/>
           <Route path="/companylist/add" element={<AddCompany/>}/>
+          <Route path="/companylist/detail" element={<CompanyDetail/>}/>
           <Route path="/publisherlist" element={<PublisherList/>}/>
           <Route path="/cms" element={<CMS/>}/>
+          <Route path="/cms/service/:service_id" element={<ServiceDetail/>}/>
+          <Route path="/cms/service/edit/:service_id" element={<ServiceEdit/>}/>
           <Route path='/404' element={<ErrorRoute />} />
           <Route path='/thankyou' element={<ThankYou />} />
           <Route path='/login' element={<Login />} />

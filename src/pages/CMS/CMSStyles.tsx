@@ -1,3 +1,5 @@
+/** @format */
+
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme: Theme) =>
@@ -72,6 +74,13 @@ export const useStyles = makeStyles((theme: Theme) =>
       margin: "20px 0",
       [theme.breakpoints.down(440)]: {
         flexDirection: "column",
+      },
+    },
+    categoryItem: {
+      width: "fit-content !important",
+      [theme.breakpoints.down(440)]: {
+        width: "100% !important",
+        maxWidth: "200px",
       },
     },
     category: {

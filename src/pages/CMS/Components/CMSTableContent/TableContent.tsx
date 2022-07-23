@@ -14,6 +14,7 @@ interface TableContentProps {
   pageNumber: number;
   perPageNumber: number;
   headerSort: (e: any) => void;
+  onRow: (e: any) => void;
 }
 
 const TableContent = ({
@@ -22,6 +23,7 @@ const TableContent = ({
   columns,
   rows,
   headerSort,
+  onRow,
 }: TableContentProps) => {
   const classes = useStyles();
 
@@ -58,17 +60,35 @@ const TableContent = ({
         ?.slice(pageNumber * perPageNumber, (pageNumber + 1) * perPageNumber)
         .map((row: any, key: any) => (
           <TableRow key={key}>
-            <TableCell className={clsx(classes.tableCell)}>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row.id)}>
               {pageNumber * perPageNumber + key + 1}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
-              {row.category}
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row.id)}>
+              {row.company_id}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
-              {row.price}
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row.id)}>
+              {row.title}
             </TableCell>
-            <TableCell className={clsx(classes.tableCell)}>
-              {row.description}
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row.id)}>
+              {row.content}
+            </TableCell>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row.id)}>
+              {row.category_id}
+            </TableCell>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row.id)}>
+              {row.createdAt}
             </TableCell>
             <TableCell
               className={clsx(classes.tableCell)}
