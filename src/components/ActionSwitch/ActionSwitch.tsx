@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import { withStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Switch, { SwitchClassKey, SwitchProps } from "@material-ui/core/Switch";
 
@@ -73,5 +73,10 @@ interface ActionSwitchProps {
 }
 
 export default function ActionSwitch({ status, action }: ActionSwitchProps) {
-  return <IOSSwitch checked={status} onChange={action} />;
+  const [sta, setSta] = useState(false);
+  const handletest = () => {
+    setSta(!sta);
+  };
+
+  return <IOSSwitch checked={sta} onChange={handletest} />;
 }

@@ -90,6 +90,11 @@ const TableContent = ({
               onClick={() => onRow(row)}>
               {row.phone}
             </TableCell>
+            <TableCell
+              className={clsx(classes.tableCell)}
+              onClick={() => onRow(row)}>
+              2022.3.42:12.35.35
+            </TableCell>
             <TableCell className={clsx(classes.tableCell)}>
               <div className={classes.action}>
                 <ActionSwitch status={switchStatus} action={handleTestSwitch} />
